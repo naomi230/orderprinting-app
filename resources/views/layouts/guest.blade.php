@@ -6,24 +6,109 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name', 'Laravel') }}</title>
+        <style>
+       
+       input{
+    height:50px;
+    width:100%;       
+    color: white !important;
+    border: 1px solid transparent;
+    background:rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    padding: 10px 60px;
+    margin: 5px 0;
+    box-sizing: border-box;
+       }
+        input:hover{
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+    label{
+      height:100%;
+      font-weight:400;
+        
+  }
+
+    h2{
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1.75rem;
+      font-weight:400;
+    }
+
+    button {
+    height:50px;
+    width:100%;       
+    color: black !important;
+    border: 1px solid transparent;
+    background:pink;
+    border-radius: 40px;
+    padding: 10px 60px;
+    margin: 5px 0;
+    box-sizing: border-box;
+
+    
+    }
+
+    button:hover{
+      background:rgb(250, 162, 176);
+      color:black;
+    }
+    a{
+      color:white;
+    }
+        </style>
+        
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        
+        <!--style-->
+        <link href="{{asset ('loginAssets/assets/css/style.css') }}" rel="stylesheet">
 
         <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+       
     </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
+
+    
+    <body style="       
+         background-size: cover;  
+         position: relative;
+         width: 100%;
+         height: calc(100vh - 110px); 
+         font-size:large; 
+         color:white;
+         background-image: url({{ asset('loginAssets/images/bg.jpg') }});
+     "
+    >
+              <header id="header"  style="background: rgba(25, 25, 25, 0.95);">
+            <div >
+        
+              <h1 class="logo"><a href="index.html"></a></h1>
+             
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><a class="nav-link scrollto" href="../index.html">Home</a></li>
+                  <li><a class="nav-link scrollto" href="../index.html">Services</a></li>
+                  <li><a class="nav-link scrscrolltoollto" href="../index.html">Pricing</a></li>
+                 <li><a class="nav-link scrollto active" href="login-form-20/index.html">Log in</a></li>
+                  <li><a class="nav-link scrollto" href="signup.html">Sign up</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav>
+        
+            </div>
+          </header>
+        <div >
             <div>
                 <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                    
                 </a>
             </div>
-
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+            <div style="relative">
+            <div style="position: absolute; top:50%; left:35%; padding-left:20px; padding-right:20px;">
+              
+            
                 {{ $slot }}
+            </div>
             </div>
         </div>
     </body>

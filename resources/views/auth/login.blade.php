@@ -4,7 +4,10 @@
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
-
+        <div>
+            <h2>
+                Have an Account?
+            </h2>
         <!-- Email Address -->
         <div>
             <x-input-label for="email" :value="__('Email')" />
@@ -39,8 +42,8 @@
                 </a>
             @endif
 
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
+            <x-primary-button >
+                {{ __('LOG IN') }}
             </x-primary-button>
         </div>
     </form>

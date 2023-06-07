@@ -1,17 +1,58 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+               
+                <section id="menu" class="menu section-bg">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2 >
+                                {{ __('Make Order') }}
+                            </h2>      
+                        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+                           <div class="col-lg-6 menu-item filter-specialty">
+                             <div class="btns" >
+                             <a href="{{ route('customer') }}" class="btn-menu" style=" margin-right:500px; padding:20px 50px;" >NEW</a>
+                             
+                             <div class="container" data-aos="fade-up">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
+                                {{ 'Dear,'}}
+                                {{ Auth::user()->name }}
+                                {{ ' you have no previous orders Create new orders'}}
+                              </div>           
+                              </div>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                      
+                        </div>
+                   
+                    
             </div>
         </div>
     </div>
+</x-slot>
 </x-app-layout>
+
+
+     
+  
+     
+
+
+
+
+<!-- ======= Menu Section ======= -->
+
+  
+ 
+      <!-- End Events Section -->
+
+
+
+</main><!-- End #main -->
+
+<!-- Vendor JS Files -->
+
+</body>
+
+</html>
