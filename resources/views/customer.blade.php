@@ -38,6 +38,39 @@
   ======================================================== -->
 
   </head>
+  <style>
+    button{
+      background-color: #0c0b09;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+}
+
+button:hover
+ {
+  background: #cda45e;
+  color: #fff;
+}
+
+textarea{
+  background: black;
+  border-radius: 10px;
+  border: 2px solid #cda45e;
+  color:#cda45e;
+  width:600px;
+  height:100px;
+}
+
+    
+  </style>
 
 <body>
     <header id="header" class="d-flex align-items-center" style="background: rgba(25, 25, 25, 0.95);">
@@ -95,19 +128,21 @@
           <h2>Make Order</h2>
          
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+            <form method="POST" action="{{ route('form.submit') }}"  enctype="multipart/form-data">
+                @csrf
 
           <div class="col-lg-6 menu-item filter-starters">
             <img src="assets/img/menu/pri.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
             <div class="menu-content">
               <a href="#">Printing Category</a>
               <span>
-                <select name="Printing Category" id="dp">
-                  <option value="">Digital Printing</option>
-                  <option value="">Large Format Printing</option>
-                  <option value="">Fabric Printing</option>
-                  <option value="">Laser Engraving</option>
-                  <option value="">Sublimation</option>
-                  <option value="">Embroidery</option>
+                <select name="field1" id="field1">
+                  <option value="Digital Printing">Digital Printing</option>
+                  <option value="Large Format Printing">Large Format Printing</option>
+                  <option value="Fabric Printing">Fabric Printing</option>
+                  <option value="Laser Engraving">Laser Engraving</option>
+                  <option value="Sublimation">Sublimation</option>
+                  <option value="Embroidery">Embroidery</option>
                 </select>
               </span>
             </div>
@@ -119,17 +154,17 @@
             <div class="menu-content">
               <a href="#">Printing Type</a>
               <span>
-                <select name="Printing Category" id="dp">
-                  <option value="">Fliers</option>
-                  <option value="">Bronchures</option>
-                  <option value="">Bussiness Cards</option>
-                  <option value="">ID Cards</option>
-                  <option value="">Calenders</option>
-                  <option value="">Banner</option>
-                  <option value="">Books</option>
-                  <option value="">Bags</option>
-                  <option value="">Cups</option>
-                  <option value="">T-shirt</option>
+                <select name="field2" id="field2">
+                  <option value="Fliers">Fliers</option>
+                  <option value="Bronchures">Bronchures</option>
+                  <option value="Business Cards">Bussiness Cards</option>
+                  <option value="ID Cards">ID Cards</option>
+                  <option value="Calendares">Calenders</option>
+                  <option value="Banner">Banner</option>
+                  <option value="Books">Books</option>
+                  <option value="Bags">Bags</option>
+                  <option value="Cups">Cups</option>
+                  <option value="T-shirts">T-shirt</option>
                 </select>
               </span>
             </div>
@@ -141,15 +176,15 @@
             <div class="menu-content">
               <a href="#">Material</a>
               <span>
-                <select name="Printing Category" id="dp">
-                  <option value="">Plain Paper</option>
-                  <option value="">Matte Paper</option>
-                  <option value="">Gloss Paper</option>
-                  <option value="">Sticker</option>
-                  <option value="">Banner</option>
-                  <option value="">Bag</option>
-                  <option value="">Cup</option>
-                  <option value="">T-shirt</option>
+                <select name="field3" id="field3">
+                  <option value="Plain Paper">Plain Paper</option>
+                  <option value="Matte Paper">Matte Paper</option>
+                  <option value="Gloss Paper">Gloss Paper</option>
+                  <option value="Sticker">Sticker</option>
+                  <option value="Banner">Banner</option>
+                  <option value="Bag">Bag</option>
+                  <option value="Cup">Cup</option>
+                  <option value="T-shirt">T-shirt</option>
                 </select>
               </span>
                 
@@ -162,16 +197,16 @@
             <div class="menu-content">
               <a href="#">Weight(g)</a>
               <span>
-                <select name="Printing Category" id="dp">
-                  <option value="">60</option>
-                  <option value="">70</option>
-                  <option value="">80</option>
-                  <option value="">100</option>
-                  <option value="">135</option>
-                  <option value="">200</option>
-                  <option value="">250</option>
-                  <option value="">300</option>
-                  <option value="">350</option>
+                <select name="field4" id="field4t">
+                  <option value="60">60</option>
+                  <option value="70">70</option>
+                  <option value="80">80</option>
+                  <option value="100">100</option>
+                  <option value="135">135</option>
+                  <option value="200">200</option>
+                  <option value="250">250</option>
+                  <option value="300">300</option>
+                  <option value="350">350</option>
                 </select>
               </span>
             </div>
@@ -182,13 +217,13 @@
             <div class="menu-content">
               <a href="#">Size</a>
               <span>
-                <select name="Printing Category" id="dp">
-                  <option value="">A0</option>
-                  <option value="">A1</option>
-                  <option value="">A2</option>
-                  <option value="">A3</option>
-                  <option value="">A4</option>
-                  <option value="">A5</option>
+                <select name="field5" id="field5">
+                  <option value="0A">A0</option>
+                  <option value="A1">A1</option>
+                  <option value="A2">A2</option>
+                  <option value="A3">A3</option>
+                  <option value="A4">A4</option>
+                  <option value="A5">A5</option>
                 </select>
               </span>
             </div>
@@ -199,12 +234,12 @@
             <div class="menu-content">
               <a href="#">Number of copies</a>
               <span>
-                <select name="Printing Category" id="dp">
-                <option value="">100</option>
-                <option value="">200</option>
-                <option value="">300</option>
-                <option value="">400</option>
-                <option value="">500</option>
+                <select name="field6" id="field6">
+                <option value="100">100</option>
+                <option value="200">200</option>
+                <option value="300">300</option>
+                <option value="400">400</option>
+                <option value="500">500</option>
              </select>
              </span>
              
@@ -213,8 +248,12 @@
             </div>
             
           </div>
-
-          
+<br>
+        <div style="color:#cda45e">
+          Printing Order Description and Details:
+        </div>
+        <br>
+        <div><textarea name="detail" id="detail"></textarea></div>
          
           <div class="col-lg-6 menu-item filter-specialty">
            
@@ -222,27 +261,29 @@
             <div class="lower">
             <div class="menu-ingredients">
              
-             <form>
+             
               <label for="fileUpload">
                 <div class="lower">
                 <p>Upload a File:</p>
               </div>
             </label>
               <input type="file" id="fileUpload" name="fileUpload">
-            </form> 
+             
              </div>    
             </div>
-            <div>
+            
               <div class="col-lg-6 menu-item filter-specialty">
               <div class="lower">
               <div class="btns" >
-               <a href="#menu" class="btn-menu" >Cancel</a>
-                <a href="finish.html" class="btn-book animated fadeInUp scrollto">Finish</a>
+                <button  >Cancel</button>
+               
+                <button type="submit" >Finish</button>
                 </div>
                 </div>
               </div>
               </div>
               </div>
+            </form>
           </div>
         </div>
       </div>
@@ -270,6 +311,9 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+ 
+
 
 </body>
 

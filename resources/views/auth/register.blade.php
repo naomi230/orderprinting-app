@@ -1,12 +1,36 @@
 <x-guest-layout>
+    <style>
+        button{
+          background-color: #0c0b09;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 50px;
+      transition: 0.3s;
+      line-height: 1;
+      color: white;
+      border: 2px solid #cda45e;
+    }
+    
+    button:hover
+     {
+      background: #cda45e;
+      color: #fff;
+    }
+    </style>
     <form method="POST" action="{{ route('register') }}" >
         @csrf
+        <center>
         <h2>
             Hello!Create New Account
         </h2>
+    </center>
 
         <!-- Name -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="name" :value="__('Name')" />
             <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -32,7 +56,7 @@
         </div>
 
         <!-- Confirm Password -->
-        <div>
+        <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
@@ -42,12 +66,12 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
-        <div>
+        <div class="mt-4">
             <a style="color:white;" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button >
+            <x-primary-button style="color:white;" >
                 {{ __('REGISTER') }}
             </x-primary-button>
         </div>

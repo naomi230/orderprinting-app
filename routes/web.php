@@ -1,7 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FormController; // Add this line
+use App\Http\Controllers\ShowController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\SuperAdminController;
+
+
 use Illuminate\Support\Facades\Route;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/',function(){
-    return view('customer');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,9 +37,22 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//routes for superAdmin
+
+Route::prefix('superAdmin')->middleware('auth','isSuperAdmin')->group(function(){
+    Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'crud'])->name('superAdmin');
+});
+
 //routes for pages 
 Route::middleware('auth')->group(function () {
     Route::get('/customer',[App\Http\Controllers\CustomerController::class,'create'])->name('customer');
+    Route::get('/viiew',[App\Http\Controllers\CustomerController::class,'createe'])->name('order.view'); //displayes the past order created
+    Route::get('/formsubmit',[App\Http\Controllers\CustomerController::class,'submitted'])->name('formsubmit');//after storing the displayed page route
+    Route::post('/form_submit',[App\Http\Controllers\FormController::class,'store'])->name('form.submit');//stores to the database
+    Route::get('/formsubmit', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
+
 });
+
 
 require __DIR__.'/auth.php';

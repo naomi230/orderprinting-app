@@ -12,4 +12,17 @@ class CustomerController extends Controller
 
         return view('customer');
     }
+
+    public function submitted()
+    {
+
+        return view('formsubmit');
+    }
+      
+    public function createe()
+    {
+
+        return view('customer');
+    }
+    
 }

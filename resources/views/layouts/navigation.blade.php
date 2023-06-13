@@ -22,14 +22,7 @@
                                 <a href="#">Notifications</a>
                             </li>
                                                         
-                           <li style="color:black;">
-                             <!-- Responsive Settings Options -->
-                         {{ Auth::user()->name }}
-                           </li>
-                           <li style="color:black;">
-                         {{ Auth::user()->email }}
-                           </li>
-                           <li>
+                        
                   <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                   </x-responsive-nav-link>

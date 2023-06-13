@@ -613,8 +613,24 @@ font-family: "Open Sans", sans-serif;
   margin-top: 30px;
 }
 
+button{
+  background-color: #0c0b09;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e; 
+}
+
 .btn-menu,
 .btn-book {
+  background-color: #0c0b09;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.5px;
@@ -1353,7 +1369,7 @@ color: #cda45e;}
 }
 
 .book-a-table .php-email-form button[type=submit] {
-  background: #cda45e;
+  background: #0c0b09;
   border: 0;
   padding: 10px 35px;
   color: #fff;
@@ -1871,7 +1887,7 @@ color: #cda45e;}
 .dapdap-content{
   display:none;
   position:absolute;
-  background-color: #f9f9f9;
+  background-color:#0c0b09;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   padding: 12px 16px;

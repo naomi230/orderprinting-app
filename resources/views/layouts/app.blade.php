@@ -630,6 +630,7 @@ font-family: "Open Sans", sans-serif;
 
 .btn-menu,
 .btn-book {
+  
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.5px;

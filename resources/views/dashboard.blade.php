@@ -13,7 +13,7 @@
                              <a href="{{ route('customer') }}" class="btn-menu" style=" margin-right:500px; padding:20px 50px;" >NEW</a>
                              
                              <div class="container" data-aos="fade-up">
-
+                                <br>
                                 {{ 'Dear,'}}
                                 {{ Auth::user()->name }}
                                 {{ ' you have no previous orders Create new orders'}}
