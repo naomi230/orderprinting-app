@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/formsubmit',[App\Http\Controllers\CustomerController::class,'submitted'])->name('formsubmit');//after storing the displayed page route
     Route::post('/form_submit',[App\Http\Controllers\FormController::class,'store'])->name('form.submit');//stores to the database
     Route::get('/formsubmit', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
-    Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
+    //Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
 });
 
 
