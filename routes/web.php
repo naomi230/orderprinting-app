@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\FormController; // Add this line
+use App\Http\Controllers\FormController; 
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SuperAdminController;
@@ -39,10 +39,14 @@ Route::middleware('auth')->group(function () {
 });
 
 //routes for superAdmin
-
+/*
 Route::prefix('superAdmin')->middleware('auth','isSuperAdmin')->group(function(){
-    Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'crud'])->name('superAdmin');
+    Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
 });
+Route::group(['middleware' => ['auth', 'isSuperAdmin']], function () {
+    // Routes accessible only to super admin
+    Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
+});*/
 
 //routes for pages 
 Route::middleware('auth')->group(function () {
@@ -51,8 +55,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/formsubmit',[App\Http\Controllers\CustomerController::class,'submitted'])->name('formsubmit');//after storing the displayed page route
     Route::post('/form_submit',[App\Http\Controllers\FormController::class,'store'])->name('form.submit');//stores to the database
     Route::get('/formsubmit', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
-
+    Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
 });
+
+
+Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
+//Route::get('/superAdmin', 'SuperAdminController@cruder');
+
 
 
 require __DIR__.'/auth.php';

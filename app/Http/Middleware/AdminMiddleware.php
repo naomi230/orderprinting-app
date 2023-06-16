@@ -17,7 +17,7 @@ class AdminMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::check()){
-            if(Auth::user()->role=='superAdmin'){
+            if(Auth::user()->role=='1'){
             
             return $next($request);
 
@@ -30,7 +30,7 @@ class AdminMiddleware
 
         return redirect('login')->with('message','please  login to access the website');
     }
-    return $next($request);
+    //return $next($request);
 }
 
 }
