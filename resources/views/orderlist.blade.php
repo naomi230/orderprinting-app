@@ -1848,7 +1848,7 @@ background:rgba(36, 36, 36, 0.95);
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Orders for {{ $user->name }}</h2>     
+           
                
 
     </section><!-- End Events Section -->
@@ -2038,7 +2038,7 @@ background:rgba(36, 36, 36, 0.95);
 </div>
     </center>
   </main><!-- End #main -->
-  <div id="preloader"></div>
+  <!--<div id="preloader"></div>-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

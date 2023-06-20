@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Order; // Replace ModelName with the actual name of your model
@@ -38,6 +39,8 @@ class FormController extends Controller
         $model->field6 = $request->input('field6');
         $model->detail = $request->input('detail');*/
 
+        $validatedData['user_id'] = Auth::id();
+
         // Assign values for other fields
         $order = Order::create($validatedData);
        
@@ -59,9 +62,9 @@ class FormController extends Controller
 
         // Log::debug('Model saved successfully.');
         // Redirect to a success page or do something else
-        return redirect()->route('formsubmit');
+        //return redirect()->route('formsubmit');
         //return redirect()->back()->with('success', 'Order submitted successfully.');
-        //return Redirect::to('/formsubmit');
+        return Redirect::to('/formsubmit');
     }
 }
 

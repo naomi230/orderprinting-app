@@ -5,6 +5,8 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ShowController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SuperAdminController;
+use App\Http\Controllers\ListViewController;
+use App\Http\Controllers\IndividualOrderListController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -52,8 +54,8 @@ Route::group(['middleware' => ['auth', 'isSuperAdmin']], function () {
 Route::middleware('auth')->group(function () {
     Route::get('/customer',[App\Http\Controllers\CustomerController::class,'create'])->name('customer');
     Route::get('/viiew',[App\Http\Controllers\CustomerController::class,'createe'])->name('order.view'); //displayes the past order created
-    Route::get('/formsubmit',[App\Http\Controllers\CustomerController::class,'submitted'])->name('formsubmit');//after storing the displayed page route
     Route::post('/form_submit',[App\Http\Controllers\FormController::class,'store'])->name('form.submit');//stores to the database
+    Route::get('/formsubmit',[App\Http\Controllers\CustomerController::class,'submitted'])->name('formsubmit');//after storing the displayed page route
     Route::get('/formsubmit', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
     //Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
 });
@@ -61,7 +63,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
 //Route::get('/superAdmin', 'SuperAdminController@cruder');
+Route::get('/customerAdminview',[App\Http\Controllers\ListViewController::class,'viewedlist'])->name('customerAdminview');//TO VIEW A LIST OF CUSTOMERS WHO HAVE MADE ORDERS IN THE ADMIN PAGE
 
+
+Route::get('/{user}/orderlist',[App\Http\Controllers\IndividualOrderListController::class,'list'])->name('orderlist');//TO VIE A WHOLE LIST OF ORDRS MADE BY CUSTOMERS IN THE ADMIN PAGE
 
 
 require __DIR__.'/auth.php';
+

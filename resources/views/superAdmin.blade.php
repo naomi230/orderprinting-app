@@ -1742,6 +1742,15 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+.view{
+  color:#cda45e;
+  font-family: "Poppins", sans-serif;
+  font-weight:bold;
+}
+.view:hover{
+  color:white;
+}
   </style>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -1776,8 +1785,8 @@ section {
   
 </head>
 
-<body>
-  <header id="header" class="d-flex align-items-center" style="background: rgba(25, 25, 25, 0.95);">
+<body style="background:rgba(25,25,25,0.96)">
+  <header id="header" class="d-flex align-items-center" style="background: rgba(0, 0, 0, 0.95);">
 		<div class="container d-flex align-items-center justify-content-between">
 	
 		  <h1 class="logo"><a href="index.html"></a></h1>
@@ -1819,54 +1828,29 @@ section {
 
 
     <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu section-bg">
+    <section id="menu" class="menu section-bg" style="background:rgba(25,25,25,0.96)">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
+        <div class="section-title" style="background:black">
           <h2>Orders</h2>
          
+          @foreach($users as $user)
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
           <div class="col-lg-6 menu-item filter-starters">
             <img src="assets2/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
             <div class="menu-content">
-              <a href="machiyacust.html">Machiya</a>
+             <div class="view">
+             <a href="{{ route('orderlist', $user) }}">{{ $user->name }}</a>
+            </div>
              </div>                          
             </div>
-          </div>
-          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e;border-radius:20px;">
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets2/img/menu/bread-barrel.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="machiyacust.html">Little Guppies Nursery</a>               
-            </div>
-          </div>
-          </div>
-          
-          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
-          <div class="col-lg-6 menu-item filter-starters">
-            <img src="assets2/img/menu/cake.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="machiyacust.html">Scalar Tech and Consultancy</a>
-            </div>
-            
-          </div>
-          </div>
+          </div>  
+      @endforeach
 
-          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
-          <div class="col-lg-6 menu-item filter-salads">
-            <img src="assets2/img/menu/caesar.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="machiyacust.html">Ankole Butcher</a>
-            </div>
-          </div>
-          </div>
-          <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e;border-radius:20px;">
-          <div class="col-lg-6 menu-item filter-specialty">
-            <img src="assets2/img/menu/tuscan-grilled.jpg" class="menu-img" alt="">
-            <div class="menu-content">
-              <a href="machiyacust.html">Peacock Hotels</a>             
-            </div>
-          </div>
+         
+          
+        
+         
 
           
 
