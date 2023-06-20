@@ -6,18 +6,18 @@ use Illuminate\Http\Request;
 
 class ListViewController extends Controller
 {
-    /*
+    
 
     public function viewedlist(){
         return view('customerAdminview');
-    }*/ 
+    }
 
-    public function showOrders(User $user)
-{
-    $orders = $user->orders()->get();
+   // public function showOrders(User $user)
+//{
+ //   $orders = $user->orders()->get();
     
-    return view('customerAdminview', compact('user', 'orders'));
-}
+ //   return view('customerAdminview', compact('user', 'orders'));
+//}
 
 
 /*public function showOrders(Customer $customer)

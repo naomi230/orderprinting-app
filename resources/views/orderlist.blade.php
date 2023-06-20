@@ -1856,6 +1856,40 @@ background:rgba(36, 36, 36, 0.95);
     <center>
     <div class="content">
       <div class="centered-div">
+
+
+        <h1>Orders for {{ $user->name }}</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Order Details</th>
+                    <!-- Add more columns as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($orders as $order)
+                    <tr>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->details }}</td>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->details }}</td>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->details }}</td>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
 <!-- ======= Menu Section ======= -->
 
 <!--<section id="menu" class="menu section-bg">
@@ -1870,7 +1904,7 @@ background:rgba(36, 36, 36, 0.95);
         </div>
       </div>-->
     
-<!-- End Events Section -->
+<!-- End Events Section --
 <section id="menu" class="menu section-bg" style="background:black;">
   <div class="container" data-aos="fade-up">
 <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
@@ -1960,7 +1994,7 @@ background:rgba(36, 36, 36, 0.95);
           
         </div>
 
-      <!--  <div class="col-lg-6 menu-item filter-specialty">
+      <!-  <div class="col-lg-6 menu-item filter-specialty">
           p>Order Status:</p>
         </div>
         <form style="margin-left:350px">
@@ -2020,13 +2054,13 @@ background:rgba(36, 36, 36, 0.95);
       </div>
       </div>
   
-</form>-->
+</form>->
   
           
         </div>
       </div>
     </div>
-  </section>
+  </section>-->
         
         
       

@@ -1848,7 +1848,7 @@ background:rgba(36, 36, 36, 0.95);
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Orders for {{ $user->name }}</h2>     
+          
                
 
     </section><!-- End Events Section -->

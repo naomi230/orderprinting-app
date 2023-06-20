@@ -17,6 +17,8 @@ class ShowController extends Controller
     $data = Order::where('user_id', $user->id)->get();;
     
     return view('formsubmit', ['data' => $data]);
+
+    
 }
 
 }

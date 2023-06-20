@@ -40,6 +40,36 @@
         padding:5px;
         
     }
+
+    .circle-image {
+  width: 100px; 
+  height: 100px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  transition: transform 0.3s, margin-top 0.3s;
+}
+
+
+.container{
+ position:relative;   
+}
+
+
+.image-wrapper{
+    position: relative;
+  width: 100px; /* Same as the image width */
+  height: 100px; /* Same as the image height */
+  
+}
+.image-wrapper:hover .circle-image {
+  
+  width: 400px; /* Revert to the original width */
+  height: 400px; 
+  border-radius: 0; 
+  margin-top: -10px;
+  transform: scale(1.1);
+
+}
     
 
 
@@ -82,8 +112,14 @@
                                                 <td>{{ $index + 1 }}</td>
                                                 <td>{{ $val->field1 }}</td>
                                                 <td>{{ $val->field2 }}</td>
-                                                <td><img src="{{ $val->fileUpload }}"></td>
-                                                <td>{{ $val->created_at }}</td>
+                                                <td>
+                                                 <div class="container">
+                                                    <div class="image-wrapper">
+                                                 <img src="{{ asset('uploads/' . $val->fileUpload)}}" class="circle-image">
+                                                    </div>
+                                                </div>   
+                                                </td>
+                                                 <td>{{ $val->created_at }}</td>
                                                 <td>
                                                     <div class="sup">
                                                     <div class="viewer"><center><a href="{{ route('order.view', ['id' => $val->id]) }}">Order Description</a></center></div>
