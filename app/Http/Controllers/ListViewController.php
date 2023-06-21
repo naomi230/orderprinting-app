@@ -3,28 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Order;
 
 class ListViewController extends Controller
 {
     
 
-    public function viewedlist(){
-        return view('customerAdminview');
+    
+    public function viewedlist(User $user)
+    {
+ // Load the orders relationship for the user
+ $user->load('orders'); 
+ 
+ 
+ // Access the orders using the orders relationship
+ $orders = $user->orders;
+
+ return view('customerAdminview', ['user' => $user, 'orders' => $orders]);
     }
 
-   // public function showOrders(User $user)
-//{
- //   $orders = $user->orders()->get();
-    
- //   return view('customerAdminview', compact('user', 'orders'));
-//}
-
-
-/*public function showOrders(Customer $customer)
-{
-    $orders = $customer->orders()->get();
-    
-    return view('customers.orders', compact('customer', 'orders'));
-}*/
 
 }

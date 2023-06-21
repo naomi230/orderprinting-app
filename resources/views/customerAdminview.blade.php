@@ -1875,12 +1875,12 @@ background:rgba(36, 36, 36, 0.95);
   <div class="container" data-aos="fade-up">
 <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
 <div class="col-lg-6 menu-item filter-starters">
-
+  @foreach($orders as $order)
           <img src="assets/img/menu/pri.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Printing Category</a>
             <span>
-              <a href="" style="color:#cda45e">Digital printing</a>
+              <a href="" style="color:#cda45e">{{ $order->field1 }}</a>
               
             </span>
           </div>
@@ -1892,7 +1892,7 @@ background:rgba(36, 36, 36, 0.95);
           <div class="menu-content">
             <a href="#">Printing Type</a>
             <span>
-              <a href="" style="color:#cda45e">Flier</a>
+              <a href="" style="color:#cda45e">{{ $order->field2 }}</a>
             </span>
           </div>
          
@@ -1903,7 +1903,7 @@ background:rgba(36, 36, 36, 0.95);
           <div class="menu-content">
             <a href="#">Material</a>
             <span>
-              <a href="" style="color:#cda45e">Gloss paper</a>
+              <a href="" style="color:#cda45e">{{ $order->field3 }}</a>
             </span>
               
             
@@ -1925,11 +1925,27 @@ background:rgba(36, 36, 36, 0.95);
           <div class="menu-content">
             <a href="#">Size</a>
             <span>
-              <a href="" style="color:#cda45e">A5</a>
+              <a href="" style="color:#cda45e">{{ $order->field4 }}</a>
             </span>
           </div>
           </div>
 
+        <div class="col-lg-6 menu-item filter-starters">
+          <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Number of copies</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field5 }}</a>
+           </select>
+           </span>
+           
+              </div>
+            </span>
+          </div>
+          
+        </div>
+        @endforeach
+        
         <div class="col-lg-6 menu-item filter-starters">
           <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
           <div class="menu-content">
@@ -1944,21 +1960,7 @@ background:rgba(36, 36, 36, 0.95);
           </div>
           
         </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Number of copies</a>
-            <span>
-              <a href="" style="color:#cda45e">100</a>
-           </select>
-           </span>
-           
-              </div>
-            </span>
-          </div>
-          
-        </div>
+       
 
       <!--  <div class="col-lg-6 menu-item filter-specialty">
           p>Order Status:</p>

@@ -1869,10 +1869,10 @@ table{
         @foreach($orders as $order)
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
           <div class="col-lg-6 menu-item filter-starters">
-            <div class="menu-content">
-              <div class="view">
+            
             <img src="{{ asset('uploads/' . $order->fileUpload)}}" class="circle-image" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
-                        
+            <div class="menu-content">
+              <div class="view">         
               {{ 'Created at:' }}{{ $order->created_at}}
               {{ 'Order:' }}<a href="{{ route('customerAdminview', $order) }}">{{ $order->field1 }}</a>
             </div>
