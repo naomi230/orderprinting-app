@@ -22,7 +22,6 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #0c0b09;
   color: #fff;
-
 }
 
 a {
@@ -180,7 +179,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(12, 11, 9, 0.6);
   border-bottom: 1px solid rgba(12, 11, 9, 0.6);
   transition: all 0.5s;
   z-index: 997;
@@ -249,7 +248,6 @@ h6 {
 */
 .navbar {
   padding: 0;
-  
 }
 
 .navbar ul {
@@ -1745,27 +1743,13 @@ section {
   color: #fff;
 }
 
-content
- {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.view{
+  color:#cda45e;
+  font-family: "Poppins", sans-serif;
+  font-weight:bold;
 }
-
-.centered-div {
-  width: 900px;
-  height: 800px;
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 50px; /* Adjust the distance from the top */
-}
-
-.nb{
-background:rgba(36, 36, 36, 0.95);
-
+.view:hover{
+  color:white;
 }
   </style>
   <meta content="" name="description">
@@ -1802,8 +1786,8 @@ background:rgba(36, 36, 36, 0.95);
 </head>
 
 <body style="background:rgba(25,25,25,0.96)">
-  <header id="header" class="d-flex align-items-center" style="background: background:rgba(25,25,25,0.96);">
-		<div class="container d-flex align-items-center justify-content-between" >
+  <header id="header" class="d-flex align-items-center" style="background: rgba(0, 0, 0, 0.95);">
+		<div class="container d-flex align-items-center justify-content-between">
 	
 		  <h1 class="logo"><a href="index.html"></a></h1>
 		  <!-- Uncomment below if you prefer to use an image logo -->
@@ -1844,21 +1828,11 @@ background:rgba(36, 36, 36, 0.95);
 
 
     <!-- ======= Menu Section ======= -->
-    <section id="menu" class="menu section-bg" style="background:rgba(2.5,2.5,2.5,0.96)">
+    <section id="menu" class="menu section-bg" style="background:rgba(25,25,25,0.96)">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-           
-               
-
-    </section><!-- End Events Section -->
-   <main >
-    <center>
-    <div class="content">
-      <div class="centered-div">
-
-
-        <h1>Orders for {{ $user->name }}</h1>
+        <div class="section-title" style="background:black">
+          <h1>Orders for {{ $user->name }}</h1>
         <table>
             <thead>
                 <tr>
@@ -1882,198 +1856,18 @@ background:rgba(36, 36, 36, 0.95);
             </tbody>
         </table>
 
-
-
-
-
-
-
-
-
-<!-- ======= Menu Section ======= -->
-
-<!--<section id="menu" class="menu section-bg">
-  <div class="container" data-aos="fade-up">
-       <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
-        <div class="col-lg-6 menu-item filter-starters">
-        <a href="index.html" class="back-to-list"><i class="bi bi-arrow-left-short"></i></a>
-        <img src="assets2/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
-        <div class="menu-content">
-          <a href="machiyacust.html" style="color:#cda45e">Machiya</a>
-         </div>                          
-        </div>
-      </div>-->
-    
-<!-- End Events Section --
-<section id="menu" class="menu section-bg" style="background:black;">
-  <div class="container" data-aos="fade-up">
-<div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
-<div class="col-lg-6 menu-item filter-starters">
-
-          <img src="assets/img/menu/pri.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Printing Category</a>
-            <span>
-              <a href="" style="color:#cda45e">Digital printing</a>
-              
-            </span>
-          </div>
          
-        </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <img src="assets/img/menu/bread-barrel.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Printing Type</a>
-            <span>
-              <a href="" style="color:#cda45e">Flier</a>
-            </span>
-          </div>
-         
-        </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/cake.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Material</a>
-            <span>
-              <a href="" style="color:#cda45e">Gloss paper</a>
-            </span>
-              
-            
-          </div>
-          </div>
-
-        <div class="col-lg-6 menu-item filter-salads">
-          <img src="assets/img/menu/caesar.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Weight(g)</a>
-            <span>
-              <a href="" style="color:#cda45e">250</a> 
-            </span>
-          </div>
-          </div>
-
-        <div class="col-lg-6 menu-item filter-specialty">
-          <img src="assets/img/menu/tuscan-grilled.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Size</a>
-            <span>
-              <a href="" style="color:#cda45e">A5</a>
-            </span>
-          </div>
-          </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Number of copies</a>
-            <span>
-              <a href="" style="color:#cda45e">100</a>
-           </select>
-           </span>
-           
-              </div>
-            </span>
-          </div>
           
-        </div>
-
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Number of copies</a>
-            <span>
-              <a href="" style="color:#cda45e">100</a>
-           </select>
-           </span>
-           
-              </div>
-            </span>
-          </div>
-          
-        </div>
-
-      <!-  <div class="col-lg-6 menu-item filter-specialty">
-          p>Order Status:</p>
-        </div>
-        <form style="margin-left:350px">
-          
-          <p style="margin-left:50px">Select Order Status:</p>
-          <label>
-            <input type="radio" name="option" value="option1">
-            Designing
-          </label>
-          <br>
-          <label>
-            <input type="radio" name="option" value="option2">
-            Approval
-          </label>
-          <br>
-         
-          <label>
-            <input type="radio" name="option" value="option3">
-            Printing
-          </label>
-          <br>
-
-          
-  <label>
-    <input type="radio" name="option" value="option3">
-    Insertion
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="option" value="option4">
-    Coloration
-  </label>
-  <br>
-  <label>
-     <input type="radio" name="option" value="option3">
-    Lamination
-  </label>
-  <br>
-  <label>
-    <input type="radio" name="option" value="option3">
-    Delivery
-  </label>
-  <br>
-  <div class="lower">
-    <div class="menu-ingredients">
-              
-    </div>
-    <div>
-      <div class="col-lg-6 menu-item filter-specialty">
-      <div class="lower">
-      <div class="btns" >
-       <a href="#menu" class="btn-menu" >Clear</a>
-        <a href="" class="btn-book animated fadeInUp scrollto">Update</a>
-        </div>
-        </div>
-      </div>
-      </div>
-      </div>
-  
-</form>->
-  
-          
-        </div>
-      </div>
-    </div>
-  </section>-->
         
-        
-      
+         
 
-    
-  
+          
 
-</div>
-</div>
-    </center>
+    </section><!-- End Events Section -->
+   
   </main><!-- End #main -->
-  <!--<div id="preloader"></div>-->
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+ <!-- <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
