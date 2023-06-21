@@ -1751,6 +1751,36 @@ section {
 .view:hover{
   color:white;
 }
+
+table{
+        background:black;
+        margin-left:40px;
+        margin-top:20px;
+        height:400px;
+        width:950px;
+        border: 2px solid #cda45c;
+        border-radius:10px;
+
+
+        font-family: "Open Sans", sans-serif;
+    }
+
+  .circle-image{
+  
+  width: 80px; 
+  height: 80px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  transition: transform 0.3s;
+  
+    }
+  .circle-image:hover{
+   width: 80px; 
+  height: 80px;
+  border-radius: 0%; 
+  object-fit: cover; 
+  }
+
   </style>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -1832,29 +1862,24 @@ section {
       <div class="container" data-aos="fade-up">
 
         <div class="section-title" style="background:black">
-          <h1>Orders for {{ $user->name }}</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Order Details</th>
-                    <!-- Add more columns as needed -->
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($orders as $order)
-                    <tr>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->details }}</td>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->details }}</td>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->details }}</td>
-                        <!-- Add more columns as needed -->
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+          <h2>Orders for {{ $user->name }}</h2>
+        </div>
+        
+                
+        @foreach($orders as $order)
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
+          <div class="col-lg-6 menu-item filter-starters">
+            <div class="menu-content">
+              <div class="view">
+            <img src="{{ asset('uploads/' . $order->fileUpload)}}" class="circle-image" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
+                        
+              {{ 'Created at:' }}{{ $order->created_at}}
+              {{ 'Order:' }}<a href="{{ route('customerAdminview', $order) }}">{{ $order->field1 }}</a>
+            </div>
+             </div>                          
+            </div>
+          </div>  
+      @endforeach
 
          
           

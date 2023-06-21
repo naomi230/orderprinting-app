@@ -1846,13 +1846,7 @@ section {
             </div>
           </div>  
       @endforeach
-
-         
-          
-        
-         
-
-          
+      
 
     </section><!-- End Events Section -->
    

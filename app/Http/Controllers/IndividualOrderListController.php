@@ -11,12 +11,16 @@ class IndividualOrderListController extends Controller
     //
     public function list(User $user)
     {
+ // Load the orders relationship for the user
+ $user->load('orders');  
 
-        $orders = $user->orders ?? [];
+ // Access the orders using the orders relationship
+ $orders = $user->orders;
 
-    return view('orderlist' , ['user' => $user, 'orders' => $orders]);
+ return view('orderlist', ['user' => $user, 'orders' => $orders]);
     }
+    
+}
 
    
 
-}
