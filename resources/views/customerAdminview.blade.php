@@ -1817,15 +1817,17 @@ button:hover
 
 
 
-table{
+table{ 
+  position: relative;
         background:black;
         margin-left:40px;
         margin-top:20px;
         height:400px;
         width:750px;
-        border: 2px solid #cda45c;
-        border-radius:10px;
-        
+        border-radius:50px;
+        box-sizing: border-box;
+       box-shadow: 0 2px 4px rgba(217, 7, 7, 0.1); /* Add a shadow effect */
+   
 
         font-family: "Open Sans", sans-serif;
     }
@@ -2045,7 +2047,8 @@ table{
 
 <br> 
 <br> 
-        <form form method="POST" action="{{ route('adminUpdates') }}">
+        <form form method="GET" action="{{ route('adminUpdates') }}">
+          
           <table>
           <thead>
             <tr>
@@ -2058,40 +2061,40 @@ table{
             <tr>
               <td>
           <label>
-            <input type="radio" name="Designing" value="Designing">
+            <input type="radio" name="status" value="Designing">
             Designing
           </label>
           <br>
           <label>
-            <input type="radio" name="Approval" value="Approval">
+            <input type="radio" name="status" value="Approval">
             Approval
           </label>
           <br>
          
           <label>
-            <input type="radio" name="Printing" value="Printing">
+            <input type="radio" name="status" value="Printing">
             Printing
           </label>
           <br>
 
           
   <label>
-    <input type="radio" name="Insertion" value="Insertion">
+    <input type="radio" name="status" value="Insertion">
     Insertion
   </label>
   <br>
   <label>
-    <input type="radio" name="Coloration" value="Coloration">
+    <input type="radio" name="status" value="Coloration">
     Coloration
   </label>
   <br>
   <label>
-     <input type="radio" name="Lamination" value="Lamination">
+     <input type="radio" name="status" value="Lamination">
     Lamination
   </label>
   <br>
   <label>
-    <input type="radio" name="Delivery" value="Delivery">
+    <input type="radio" name="status" value="Delivery">
     Delivery
   </label>
   <br>
@@ -2104,8 +2107,10 @@ table{
             </tr>
           </tbody>
           </table>
+      
   <div class="lower">
     <div class="menu-ingredients">
+      
               
     </div>
     <div>
@@ -2115,12 +2120,14 @@ table{
        <button style="border-radius:50px;">CLEAR</button>
        <button type="submit" style="border-radius:50px;">UPDATE</button>
         </div>
+       
         </div>
       </div>
       </div>
       </div>
   
 </form>
+  
         
   
  

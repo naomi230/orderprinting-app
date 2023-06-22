@@ -69,7 +69,14 @@ Route::get('/customerAdminview',[App\Http\Controllers\ListViewController::class,
 Route::get('/{user}/orderlist',[App\Http\Controllers\IndividualOrderListController::class,'list'])->name('orderlist');//TO VIE A WHOLE LIST OF ORDRS MADE BY CUSTOMERS IN THE ADMIN PAGE
 
 //TO SUBMIT NEW UPDATES OF THE USER
-Route::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('adminUpdates');
-
+                   //READ THIS IMPORTANT !!!!!!!!!!!
+//oKAY READ CAAREFULLY I KNOW YOU WILL FORGET
+//WE ARE LEAVING THIS ROUTE FOR NOW BECAUSE IT DOES NOT WORK UNLESS I
+//THE POST METHOD WHICH IS ONLY POSITIBLE AFTER AUTHENTICATION SO FOR NOW FINISH FIXING THE
+//USER PAGE TO DISPLAY THE RELATION AND STATUS IN THE VIEW POINT AFTER THAT 
+//WE WILL DEAL WITH REPLASING THE ACTION TO POST FROM GET 
+//PAGE AFTER THAT WE WILL DEAL 
+//THIS IS THE ROUTERoute::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('adminUpdates');  //A BLADE TO ENABLE THE UPDATES TO GO STRAIGHT TO DATABASE
+               //READ THIS IMPORTANT !!!!!!!!!!!
 require __DIR__.'/auth.php';
 
