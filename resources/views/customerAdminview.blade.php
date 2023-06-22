@@ -970,7 +970,7 @@ section {
   position: relative;
   z-index: 3;
   font-weight: 700;
-  color: #cda45e;
+  color: white;
   text-decoration:none;
   transition: 0.3s;
 }
@@ -1756,7 +1756,7 @@ content
 
 .centered-div {
   width: 900px;
-  height: 800px;
+  height: 1090px;
   background: rgba(0, 0, 0, 0.95);
   border-radius: 10px;
   padding: 20px;
@@ -1767,6 +1767,82 @@ content
 background:rgba(36, 36, 36, 0.95);
 
 }
+
+label{
+  color:#cda45e;
+  transition:0.5s;
+
+}
+label:hover{
+  color:white;
+}
+
+form{
+  color:inherit;
+  font-weight: 700;
+}
+form p{
+  color:#cda45a;
+  font-weight: 700;
+}
+
+button{
+  background-color: #0c0b09;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+}
+
+button:hover
+ {
+  background: #cda45e;
+  color: #fff;}
+
+  textarea{
+  background: black;
+  border-radius: 10px;
+  border: 2px solid #cda45e;
+  color:#cda45e;
+  width:400px;
+  height:300px;
+}
+
+
+
+table{
+        background:black;
+        margin-left:40px;
+        margin-top:20px;
+        height:400px;
+        width:750px;
+        border: 2px solid #cda45c;
+        border-radius:10px;
+        
+
+        font-family: "Open Sans", sans-serif;
+    }
+    
+    th{
+        padding:10px;
+        border:3px solid rgba(25,25,25,0.999);
+        color:white;
+    }
+    td{
+      padding:10px;
+      border:3px solid rgba(25,25,25,0.999);
+      
+    }
+
+
+
   </style>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -1875,7 +1951,7 @@ background:rgba(36, 36, 36, 0.95);
   <div class="container" data-aos="fade-up">
 <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
 <div class="col-lg-6 menu-item filter-starters">
-  @foreach($orders as $order)
+  @forelse($orders as $order)
           <img src="assets/img/menu/pri.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Printing Category</a>
@@ -1915,7 +1991,7 @@ background:rgba(36, 36, 36, 0.95);
           <div class="menu-content">
             <a href="#">Weight(g)</a>
             <span>
-              <a href="" style="color:#cda45e">250</a> 
+              <a href="" style="color:#cda45e">{{ $order->field4 }}</a> 
             </span>
           </div>
           </div>
@@ -1925,7 +2001,7 @@ background:rgba(36, 36, 36, 0.95);
           <div class="menu-content">
             <a href="#">Size</a>
             <span>
-              <a href="" style="color:#cda45e">{{ $order->field4 }}</a>
+              <a href="" style="color:#cda45e">{{ $order->field5 }}</a>
             </span>
           </div>
           </div>
@@ -1935,23 +2011,7 @@ background:rgba(36, 36, 36, 0.95);
           <div class="menu-content">
             <a href="#">Number of copies</a>
             <span>
-              <a href="" style="color:#cda45e">{{ $order->field5 }}</a>
-           </select>
-           </span>
-           
-              </div>
-            </span>
-          </div>
-          
-        </div>
-        @endforeach
-        
-        <div class="col-lg-6 menu-item filter-starters">
-          <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
-          <div class="menu-content">
-            <a href="#">Number of copies</a>
-            <span>
-              <a href="" style="color:#cda45e">100</a>
+              <a href="" style="color:#cda45e">{{ $order->field6 }}</a>
            </select>
            </span>
            
@@ -1962,50 +2022,88 @@ background:rgba(36, 36, 36, 0.95);
         </div>
        
 
-      <!--  <div class="col-lg-6 menu-item filter-specialty">
-          p>Order Status:</p>
-        </div>
-        <form style="margin-left:350px">
+        <div class="col-lg-6 menu-item filter-starters">
+          <img src="assets/img/menu/p.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Description made by Customer</a>
+            <div style="border:solid 2px #cda45a; height:1000px width:1000px; border-radius:5%;">
+            <span  >
+              <a href="" style="color:#cda45e">{{ $order->detail }}</a>
+           </select>
+           </span>
+          </div>
+           
+              </div>
+            </span>
+          </div>
           
-          <p style="margin-left:50px">Select Order Status:</p>
+        </div>
+        @empty
+    <p>No orders are made by the customer</p>
+@endforelse
+
+
+<br> 
+<br> 
+        <form form method="POST" action="{{ route('adminUpdates') }}">
+          <table>
+          <thead>
+            <tr>
+              <th>Update Order Status Below:</th>
+              <th> Add Printing Order Status Details: </th>
+            </tr>
+              </thead>
+          
+          <tbody>
+            <tr>
+              <td>
           <label>
-            <input type="radio" name="option" value="option1">
+            <input type="radio" name="Designing" value="Designing">
             Designing
           </label>
           <br>
           <label>
-            <input type="radio" name="option" value="option2">
+            <input type="radio" name="Approval" value="Approval">
             Approval
           </label>
           <br>
          
           <label>
-            <input type="radio" name="option" value="option3">
+            <input type="radio" name="Printing" value="Printing">
             Printing
           </label>
           <br>
 
           
   <label>
-    <input type="radio" name="option" value="option3">
+    <input type="radio" name="Insertion" value="Insertion">
     Insertion
   </label>
   <br>
   <label>
-    <input type="radio" name="option" value="option4">
+    <input type="radio" name="Coloration" value="Coloration">
     Coloration
   </label>
   <br>
   <label>
-     <input type="radio" name="option" value="option3">
+     <input type="radio" name="Lamination" value="Lamination">
     Lamination
   </label>
   <br>
   <label>
-    <input type="radio" name="option" value="option3">
+    <input type="radio" name="Delivery" value="Delivery">
     Delivery
   </label>
   <br>
+  </td>
+ <td>
+  
+  
+  <div><textarea name="detail" id="detail"></textarea></div>
+              </td>
+            </tr>
+          </tbody>
+          </table>
   <div class="lower">
     <div class="menu-ingredients">
               
@@ -2014,21 +2112,23 @@ background:rgba(36, 36, 36, 0.95);
       <div class="col-lg-6 menu-item filter-specialty">
       <div class="lower">
       <div class="btns" >
-       <a href="#menu" class="btn-menu" >Clear</a>
-        <a href="" class="btn-book animated fadeInUp scrollto">Update</a>
+       <button style="border-radius:50px;">CLEAR</button>
+       <button type="submit" style="border-radius:50px;">UPDATE</button>
         </div>
         </div>
       </div>
       </div>
       </div>
   
-</form>-->
+</form>
+        
   
-          
+ 
         </div>
       </div>
     </div>
   </section>
+  
         
         
       

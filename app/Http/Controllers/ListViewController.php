@@ -10,18 +10,21 @@ class ListViewController extends Controller
 {
     
 
-    
-    public function viewedlist(User $user)
-    {
- // Load the orders relationship for the user
- $user->load('orders'); 
- 
- 
- // Access the orders using the orders relationship
- $orders = $user->orders;
+    public function viewedlist(Request $request)
+{
+    $orderIds = $request->query('order_ids', []);
 
- return view('customerAdminview', ['user' => $user, 'orders' => $orders]);
+    //changin the argument into array from string
+    if (!is_array($orderIds)) {
+        $orderIds = explode(',', $orderIds);
     }
+
+    
+    $orders = Order::whereIn('id', $orderIds)->get();
+
+    return view('customerAdminview', ['orders' => $orders]);
+}
+
 
 
 }

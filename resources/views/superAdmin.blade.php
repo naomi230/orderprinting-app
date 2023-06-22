@@ -1834,7 +1834,7 @@ section {
         <div class="section-title" style="background:black">
           <h2>Orders</h2>
          
-          @foreach($users as $user)
+          @forelse($users as $user)
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
           <div class="col-lg-6 menu-item filter-starters">
             <img src="assets2/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
@@ -1844,8 +1844,11 @@ section {
             </div>
              </div>                          
             </div>
-          </div>  
-      @endforeach
+          </div>
+          @empty
+    {{ 'No orders are made by the customer' }}
+@endforelse  
+      
       
 
     </section><!-- End Events Section -->

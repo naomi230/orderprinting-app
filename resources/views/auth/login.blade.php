@@ -53,7 +53,7 @@
 
         <!-- Remember Me -->
         
-            <label for="remember_me"  class="checkbox"">
+            <label for="remember_me"  class="checkbox">
                 <input id="remember_me" type="checkbox" class="checkbox-primary" name="remember">
                 <span></span>{{ __('Remember me') }}
             </label>

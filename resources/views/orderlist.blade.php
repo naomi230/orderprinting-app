@@ -247,7 +247,10 @@ h6 {
 * Desktop Navigation 
 */
 .navbar {
-  padding: 0;
+  
+  display:flex;
+  justify-content: flex-end;
+  margin-left:100px;
 }
 
 .navbar ul {
@@ -944,6 +947,7 @@ section {
 }
 
 .menu .menu-content {
+  margin-top:-5px;
   margin-left: 85px;
   overflow: hidden;
   display: flex;
@@ -1748,9 +1752,7 @@ section {
   font-family: "Poppins", sans-serif;
   font-weight:bold;
 }
-.view:hover{
-  color:white;
-}
+
 
 table{
         background:black;
@@ -1780,6 +1782,19 @@ table{
   border-radius: 0%; 
   object-fit: cover; 
   }
+
+   table{
+        background:black;
+        margin-left:0px;
+        margin-top:1px;
+        height:80px;
+        width:300px;
+        border: 2px solid black;
+        border-radius:10px;
+        
+
+        font-family: "Open Sans", sans-serif;
+    }
 
   </style>
   <meta content="" name="description">
@@ -1832,7 +1847,7 @@ table{
 			  
 			  <li><a class="nav-link scrscrolltoollto" href="oncetheadminhaslogin/index.html">Jobs</a></li>
 			  
-			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
+			  <li class="dropdown"><a href="#"><span><img src="{{asset ('assets/img/menu/icon.jpg') }}" style=" height:20px; width:20px;"></span></a>
 				<ul>
 				  <li><a href="#" style="text-decoration:none;">Notifications</a></li>
 				  <li><a href="#" style="text-decoration:none;">Settings</a></li>
@@ -1867,14 +1882,26 @@ table{
         
                 
         @foreach($orders as $order)
-        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px; background-color:black;">
           <div class="col-lg-6 menu-item filter-starters">
-            
-            <img src="{{ asset('uploads/' . $order->fileUpload)}}" class="circle-image" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
             <div class="menu-content">
-              <div class="view">         
-              {{ 'Created at:' }}{{ $order->created_at}}
-              {{ 'Order:' }}<a href="{{ route('customerAdminview', $order) }}">{{ $order->field1 }}</a>
+              <div class="view">  
+            <img src="{{ asset('uploads/' . $order->fileUpload)}}" class="circle-image" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
+           
+                <table >
+                  
+                  <tbody>
+                    <tr>  
+              <td>{{ 'Created at:' }}</td>
+              <td>{{ $order->created_at}}</td>
+                    </tr>
+                    <tr>
+              <td>{{ 'Order:' }}</td>
+              <td><a href="{{ route('customerAdminview', ['order_ids' => $order->id]) }}">{{ $order->field1 }}</a></td>
+                    </tr>  
+                  </tbody>
+                  
+              </table>
             </div>
              </div>                          
             </div>

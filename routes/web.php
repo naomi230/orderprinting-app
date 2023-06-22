@@ -68,7 +68,8 @@ Route::get('/customerAdminview',[App\Http\Controllers\ListViewController::class,
 
 Route::get('/{user}/orderlist',[App\Http\Controllers\IndividualOrderListController::class,'list'])->name('orderlist');//TO VIE A WHOLE LIST OF ORDRS MADE BY CUSTOMERS IN THE ADMIN PAGE
 
-
+//TO SUBMIT NEW UPDATES OF THE USER
+Route::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('adminUpdates');
 
 require __DIR__.'/auth.php';
 
