@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\OrderUpdate;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
+
 
 
 class AdminUpdatesController extends Controller

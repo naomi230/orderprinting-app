@@ -296,51 +296,51 @@
 
           <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="150">
             <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
+              <h3 style="color:white;">Graphics</h3>
+              <h4><sup>Tshs</sup>10,000<span>/ORDER</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li  style="color:white; font-weight:800">Price variation factors:</li>
+                <li  style="color:white;">Type of printing</li>
+                <li  style="color:white;">Printing Location</li>
+                <li class="na"  style="color:white;">Design</li>
+                <li class="na"  style="color:white;">Discount</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Order Now</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="zoom-in">
             <div class="box featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
+              <h3 >Business</h3>
+              <h4><sup>Tshs</sup>1,500<span>/ORDER</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li  style="font-weight:800">Price variation factors:</li>
+                <li>Material</li>
+                <li>Number of Orders</li>
+                <li>Design</li>
+                <li class="na">Discount</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Order Now</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
             <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
+              <h3 style="color:white;">Onsite Branding</h3>
+              <h4><sup>Tshs</sup>10,000<span>/ORDER</span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li  style="color:white; font-weight:800">Price variation factors:</li>
+                <li  style="color:white;">Design</li>
+                <li  style="color:white;">Type of printing</li>
+                <li  style="color:white;">Distance of Branding site</li>
+                <li  style="color:white;">Discount</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Order Now</a>
               </div>
             </div>
           </div>

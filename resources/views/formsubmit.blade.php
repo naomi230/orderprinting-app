@@ -13,25 +13,40 @@
         font-family: "Open Sans", sans-serif;
     }
     .viewer{
-        border:2px solid #cda45c;
         height:35px;
         width:75px;
-        color:white;
-        border-radius:25px;
-        padding: 10px;
     } 
     td,th{
         padding:10px;
         border:3px solid rgba(25,25,25,0.999);
     }
 
+    .viewer button {
+        border:2px solid #cda45c;
+        height:50px;
+        width:85px;
+        color:white;
+        border-radius:25px;
+        padding: 10px;
+        background: black;
+    }
+    .viewer button:hover{
+        background:#cda45c;
+    }
+
          
     
     .viewer a{
+        
+        border:2px solid #cda45c;
+        height:35px;
+        width:75px;
         color:white;
+        border-radius:25px;
+        padding: 10px;
         
     }
-    .viewer:hover{
+    .viewer a:hover{
         
         background:#cda45c;
     }
@@ -70,6 +85,55 @@
   transform: scale(1.1);
 
 }
+#hiddenDiv {
+  
+      display: none;
+      background-color:black;
+      border: 2px solid #cda45c;
+      width:400px;
+      height:600px
+      border-radius: 10px;
+      padding: 10px;
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 9998;
+    }
+   
+
+.descript{
+    border:2 px solid #cda45c;
+    border-radius: 10px;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color:#cda45c;
+    transition:0.5s;
+
+}
+
+.descript h3 {
+    color:#cda45c;
+}
+
+.descript h3:hover {
+    color:white;
+}
+
+   
     
 
 
@@ -121,8 +185,37 @@
                                                 </td>
                                                  <td>{{ $val->created_at }}</td>
                                                 <td>
-                                                    <div class="sup">
-                                                    <div class="viewer"><center><a href="{{ route('order.view', ['id' => $val->id]) }}">Order Description</a></center></div>
+                               <div class="sup">
+                                <div class="viewer">
+                               <center>                                                  
+                                                    
+                         <button id="showButton">Order Description</button>
+                       <div id="hiddenDiv">
+                        <h2>Hidden Content</h2>
+                        <br>
+                        <br>
+                            <img src="{{ asset('uploads/' . $val->fileUpload)}}" style="height:80px; width:80px;" class="menu-img" alt="">
+                           
+                              <div class="descript">
+                               <h3> Order No           {{ $index + 1 }}</h3><br>
+                               <h3> Printing Category  {{ $val->field1 }}</h3><br>
+                               <h3> Printing Type      {{ $val->field2 }}</h3><br>
+                                <h3> Material           {{ $val->field3 }}</h3><br>                            
+                               <h3> Weight(g)          {{ $val->field4 }}</h3><br>
+                               <h3> Size               {{ $val->field5 }}</h3><br>
+                                <h3> Number of copies   {{ $val->field6 }}</h3><br>
+                                <h3> Description        {{ $val->detail }}</h3>
+
+                            
+                              </div>
+                              
+                            
+                       
+                          
+                             </div>
+                          <div id="overlay"></div> 
+                               </center>
+                                 </div>
                                                    <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Updates</a></center></div>
                                                    <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Invoice</a></center></div>
                                                 
@@ -156,11 +249,23 @@
  
       <!-- End Events Section -->
 
+      <script>
+        const showButton = document.getElementById("showButton");
+        const hiddenDiv = document.getElementById("hiddenDiv");
+        const overlay = document.getElementById("overlay");
+    
+        showButton.addEventListener("click", function() {
+          hiddenDiv.style.display = "block";
+          overlay.style.display = "block";
+        });
+    
+        overlay.addEventListener("click", function() {
+          hiddenDiv.style.display = "none";
+          overlay.style.display = "none";
+        });
+      </script>
 
-
-</main><!-- End #main -->
-
-<!-- Vendor JS Files -->
+</main>
 
 </body>
 

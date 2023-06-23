@@ -76,7 +76,7 @@ Route::get('/{user}/orderlist',[App\Http\Controllers\IndividualOrderListControll
 //USER PAGE TO DISPLAY THE RELATION AND STATUS IN THE VIEW POINT AFTER THAT 
 //WE WILL DEAL WITH REPLASING THE ACTION TO POST FROM GET 
 //PAGE AFTER THAT WE WILL DEAL 
-//THIS IS THE ROUTERoute::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('adminUpdates');  //A BLADE TO ENABLE THE UPDATES TO GO STRAIGHT TO DATABASE
+//Route::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('adminUpdates');  //A BLADE TO ENABLE THE UPDATES TO GO STRAIGHT TO DATABASE
                //READ THIS IMPORTANT !!!!!!!!!!!
 require __DIR__.'/auth.php';
 
