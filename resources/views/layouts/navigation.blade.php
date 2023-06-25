@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
-    <nav id="navbar" class="navbar">
+    <nav id="navbar" class="navbar"  style="margin-left:1000px;">
         
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
@@ -11,10 +11,10 @@
 
                 <div>
                     <ul>
-                      <li><a class="nav-link scrollto active" href="import/index.html/#hero">Order</a></li>
+                      <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
                       <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
                       
-                      <li><a class="nav-link scrscrolltoollto" href="oncethecustomerhasloginExplore/index.html">Explore</a></li>
+                      <li><a class="nav-link scrscrolltoollto" href="{{ ('customerExplore')}}">Explore</a></li>
                       
                       <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
                         <ul>

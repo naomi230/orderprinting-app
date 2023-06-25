@@ -249,6 +249,7 @@ h6 {
 */
 .navbar {
   padding: 0;
+  margin-left:-80px;
   
 }
 
@@ -1756,7 +1757,7 @@ content
 
 .centered-div {
   width: 900px;
-  height: 1090px;
+  height: 1230px;
   background: rgba(0, 0, 0, 0.95);
   border-radius: 10px;
   padding: 20px;
@@ -1843,6 +1844,63 @@ table{
       
     }
 
+    .circle-image{
+    width: 80px; 
+  height: 80px;
+  border-radius: 50%; 
+  object-fit: cover; 
+  transition: transform 0.3s;
+  
+    }
+  .circle-image:hover{
+   width: 80px; 
+  height: 80px;
+  border-radius: 0%; 
+  object-fit: cover; 
+  }
+
+  .previous-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-right:900px;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border:2px solid #cda45e;
+  background-color:black;
+  transition: background-color 0.3s;
+}
+
+.circle:hover {
+  background-color: #cda45e;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #cda45e;
+  transition: border-right-color 0.3s;
+}
+
+.circle:hover .arrow {
+  border-right-color: black;
+}
+
+
+
+
+
+
+
 
 
   </style>
@@ -1884,17 +1942,22 @@ table{
 		<div class="container d-flex align-items-center justify-content-between" >
 	
 		  <h1 class="logo"><a href="index.html"></a></h1>
-		  <!-- Uncomment below if you prefer to use an image logo -->
-		  <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-	
+		  
 	  <!-- ======= Header ======= -->
 	  
 		  <nav id="navbar" class="navbar">
 			<ul>
-			  <li><a class="nav-link scrollto active" href="../index.html">Order</a></li>
-			  <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
+        <a href="{{ url()->previous() }}" class="previous-link">
+          <div class="circle">
+            <span class="arrow"></span>
+          </div>
+        </a>
+        
+        
+			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="oncetheadminhaslogin/index.html">Jobs</a></li>
+			  
+			  <li><a class="nav-link scrscrolltoollto" href="{{ route('adminJobs') }}">Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -1936,24 +1999,20 @@ table{
       <div class="centered-div">
 <!-- ======= Menu Section ======= -->
 
-<!--<section id="menu" class="menu section-bg">
-  <div class="container" data-aos="fade-up">
-       <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
-        <div class="col-lg-6 menu-item filter-starters">
-        <a href="index.html" class="back-to-list"><i class="bi bi-arrow-left-short"></i></a>
-        <img src="assets2/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
-        <div class="menu-content">
-          <a href="machiyacust.html" style="color:#cda45e">Machiya</a>
-         </div>                          
-        </div>
-      </div>-->
+  
     
 <!-- End Events Section -->
-<section id="menu" class="menu section-bg" style="background:black;">
-  <div class="container" data-aos="fade-up">
+
+    
+  @forelse($orders as $order)
+  <section id="menu" class="menu section-bg" style="background:black;">
+  
+  <div class="section-title" style="background:black">
+    <br>
+    <h2>ORDER CREATED AT {{ $order->created_at}}</h2>
+  </div>
 <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
 <div class="col-lg-6 menu-item filter-starters">
-  @forelse($orders as $order)
           <img src="assets/img/menu/pri.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Printing Category</a>
@@ -2038,8 +2097,28 @@ table{
               </div>
             </span>
           </div>
+
+
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{{ asset('uploads/' . $order->fileUpload)}}" style="height:80px; width:80px;" class="menu-img" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
+           
+            <div class="menu-content">
+              <a href="#">Sample provided by Customer</a>
+              <div >
+              <span  >
+                <a href="{{ route('orders.download', ['orderId' => $order->id]) }}" style="color:white; background:#cda45a;border-radius:15%; padding:10px;">DOWNLOAD</a>
+             </select>
+             </span>
+            </div>
+             
+                </div>
+              </span>
+            </div>
           
-        </div>
+        
+
+
+        
         @empty
     <p>No orders are made by the customer</p>
 @endforelse

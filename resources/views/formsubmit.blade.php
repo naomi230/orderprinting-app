@@ -25,6 +25,7 @@
         border:2px solid #cda45c;
         height:50px;
         width:85px;
+        margin-top: -12px;
         color:white;
         border-radius:25px;
         padding: 10px;
@@ -78,11 +79,11 @@
 }
 .image-wrapper:hover .circle-image {
   
-  width: 400px; /* Revert to the original width */
+   /*width: 400px; /* Revert to the original width *
   height: 400px; 
   border-radius: 0; 
   margin-top: -10px;
-  transform: scale(1.1);
+  transform: scale(1.1); */
 
 }
 #hiddenDiv {
@@ -91,12 +92,12 @@
       background-color:black;
       border: 2px solid #cda45c;
       width:400px;
-      height:600px
-      border-radius: 10px;
+      height:700px;
+      border-radius: 30px;
       padding: 10px;
       position: absolute;
       top: 20%;
-      left: 50%;
+      left: 60%;
       transform: translate(-50%, -50%);
       z-index: 9999;
     }
@@ -122,14 +123,28 @@
     align-items: flex-start;
     color:#cda45c;
     transition:0.5s;
+    left:50%;
 
 }
 
-.descript h3 {
+.descript h3{
+
+  color:white;
+  font-size: 25px;
+}
+.descript p{
     color:#cda45c;
+    margin-left:-90px;
+    margin-top:35px;
+    font-family: "Playfair Display", serif;
+    font-weight:300;
+  font-size: 20px;
 }
 
-.descript h3:hover {
+
+
+
+.descript p:hover {
     color:white;
 }
 
@@ -166,7 +181,9 @@
                                             <th>ORDER DETAIL</th>
                                             <th>IMAGE</th>
                                             <th>CREATED AT</th>
+                                            <th></th>
                                             <th>VIEW</th>
+                                            <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -191,20 +208,20 @@
                                                     
                          <button id="showButton">Order Description</button>
                        <div id="hiddenDiv">
-                        <h2>Hidden Content</h2>
+                        <h2>ORDER MADE</h2>
                         <br>
                         <br>
                             <img src="{{ asset('uploads/' . $val->fileUpload)}}" style="height:80px; width:80px;" class="menu-img" alt="">
                            
                               <div class="descript">
-                               <h3> Order No           {{ $index + 1 }}</h3><br>
-                               <h3> Printing Category  {{ $val->field1 }}</h3><br>
-                               <h3> Printing Type      {{ $val->field2 }}</h3><br>
-                                <h3> Material           {{ $val->field3 }}</h3><br>                            
-                               <h3> Weight(g)          {{ $val->field4 }}</h3><br>
-                               <h3> Size               {{ $val->field5 }}</h3><br>
-                                <h3> Number of copies   {{ $val->field6 }}</h3><br>
-                                <h3> Description        {{ $val->detail }}</h3>
+                               <h3> Order No:           {{ $index + 1 }}</h3><br>
+                               <p> Printing Category:{{ $val->field1 }}</p><br>
+                               <p> Printing Type:     {{ $val->field2 }}</p><br>
+                                <p>Material:           {{ $val->field3 }}</p><br>                            
+                               <p> Weight(g):         {{ $val->field4 }}</p><br>
+                               <p> Size:               {{ $val->field5 }}</p><br>
+                                <p>Number of copies:   {{ $val->field6 }}</p><br>
+                                <p>Description:        {{ $val->detail }}</p>
 
                             
                               </div>
@@ -216,8 +233,9 @@
                           <div id="overlay"></div> 
                                </center>
                                  </div>
-                                                   <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Updates</a></center></div>
-                                                   <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Invoice</a></center></div>
+                                </td> 
+                                                  <td> <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Updates</a></center></div></td>
+                                                  <td> <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Invoice</a></center></div>
                                                 
                                                 </div>
                                                 </td> <!-- Replace 'order.view' with the actual route name for viewing an order -->

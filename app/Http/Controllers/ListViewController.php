@@ -25,6 +25,23 @@ class ListViewController extends Controller
     return view('customerAdminview', ['orders' => $orders]);
 }
 
+public function downloadImage($orderId)
+{
+    $order = Order::findOrFail($orderId);
 
+    $filePath = public_path('uploads/' . $order->fileUpload);
+
+    if (file_exists($filePath)) {
+        $headers = [
+            'Content-Type' => 'application/octet-stream',
+            'Content-Description' => 'File Transfer',
+            'Content-Disposition' => 'attachment; filename=' . $order->fileUpload,
+        ];
+
+        return response()->download($filePath, $order->fileUpload, $headers);
+    } else {
+        return redirect()->back()->with('error', 'File not found.');
+    }
+}
 
 }

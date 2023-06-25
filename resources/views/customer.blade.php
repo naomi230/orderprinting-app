@@ -69,7 +69,45 @@ textarea{
   height:100px;
 }
 
-    
+ 
+
+.previous-link {
+  display: inline-block;
+  text-decoration: none;
+  margin-right:950px;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border:2px solid #cda45e;
+  background-color:black;
+  transition: background-color 0.3s;
+}
+
+.circle:hover {
+  background-color: #cda45e;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #cda45e;
+  transition: border-right-color 0.3s;
+}
+
+.circle:hover .arrow {
+  border-right-color: black;
+}
+
+
   </style>
 
 <body>
@@ -81,12 +119,18 @@ textarea{
 		  <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 	
 	  <!-- ======= Header ======= -->
-	  <nav id="navbar" class="navbar">
+	  <nav id="navbar" class="navbar" style="margin-left:-100px;">
         <ul>
-          <li><a class="nav-link scrollto active" href="import/index.html/#hero">Order</a></li>
+
+          <a href="{{ url()->previous() }}" class="previous-link">
+            <div class="circle">
+              <span class="arrow"></span>
+            </div>
+          </a>
+          <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
           <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
           
-          <li><a class="nav-link scrscrolltoollto" href="oncethecustomerhasloginExplore/index.html">Explore</a></li>
+          <li><a class="nav-link scrscrolltoollto" href="{{ ('customerExplore')}}">Explore</a></li>
           
           <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
             <ul>

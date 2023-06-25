@@ -247,10 +247,7 @@ h6 {
 * Desktop Navigation 
 */
 .navbar {
-  
-  display:flex;
-  justify-content: flex-end;
-  margin-left:100px;
+  margin-right:800px;
 }
 
 .navbar ul {
@@ -1795,6 +1792,42 @@ table{
 
         font-family: "Open Sans", sans-serif;
     }
+    .previous-link {
+  display: inline-block;
+  text-decoration: none;
+ margin-right:900px
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border:2px solid #cda45e;
+  background-color:black;
+  transition: background-color 0.3s;
+}
+
+.circle:hover {
+  background-color: #cda45e;
+}
+
+.arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-right: 6px solid #cda45e;
+  transition: border-right-color 0.3s;
+}
+
+.circle:hover .arrow {
+  border-right-color: black;
+}
+
 
   </style>
   <meta content="" name="description">
@@ -1842,7 +1875,13 @@ table{
 	  
 		  <nav id="navbar" class="navbar">
 			<ul>
-			  <li><a class="nav-link scrollto active" href="../index.html">Order</a></li>
+        <a href="{{ asset('superAdmin') }}" class="previous-link">
+          <div class="circle">
+            <span class="arrow"></span>
+          </div>
+        </a>
+        
+			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
 			  
 			  <li><a class="nav-link scrscrolltoollto" href="oncetheadminhaslogin/index.html">Jobs</a></li>
