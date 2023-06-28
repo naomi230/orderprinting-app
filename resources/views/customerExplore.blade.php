@@ -107,6 +107,28 @@ textarea{
   border-right-color: black;
 }
 
+.image-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
+  grid-gap: 10px;
+}
+  
+
+.image-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.image-img{
+  height:700px; 
+  width:700px;
+  border-radius: 10%;
+  
+}
+
+
 
   </style>
 
@@ -127,7 +149,7 @@ textarea{
               <span class="arrow"></span>
             </div>
           </a>
-          <li><a class="nav-link scrscrolltoollto" href="import/index.html/#hero">Order</a></li>
+          <li><a class="nav-link scrscrolltoollto" href="{{ url()->previous()}}">Order</a></li>
           <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
           
           <li><a class="nav-link scrollto active" href="{{ ('customerExplore')}}">Explore</a></li>
@@ -158,6 +180,33 @@ textarea{
 
     </div>
     </header>
+
+    
+      
+            <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 menu-item filter-starters">
+                <h2 style="color:white;">Explore Our Designs</h2>
+            
+                
+                  @if (count($images) > 0)
+                  <div class="image-list">
+                  @foreach ($images as $image)
+                   <div class="image-item"> 
+                    
+                    <img src="{{ asset('images/' . $image->filename) }}" class="image-img" alt="Image">
+                      
+                        </div>
+                  @endforeach
+              
+            </div>
+          @else
+              <p style="color:white;">No images uploaded yet.</p>
+          @endif
+                </div>
+          </div>
+      </div>
+    </div>
+    <div>
   
 		
       

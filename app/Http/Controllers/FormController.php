@@ -64,7 +64,7 @@ class FormController extends Controller
         // Redirect to a success page or do something else
         //return redirect()->route('formsubmit');
         //return redirect()->back()->with('success', 'Order submitted successfully.');
-        return Redirect::to('/formsubmit');
+        return Redirect::to('/dashboard');
     }
 }
 

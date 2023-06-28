@@ -10,5 +10,10 @@ class OrderUpdate extends Model
     use HasFactory;
 
     protected $fillable = ['status', 'detail'];
+    
+    public function order()
+{
+    return $this->belongsTo(Order::class, 'order_id');
+}
 
 }

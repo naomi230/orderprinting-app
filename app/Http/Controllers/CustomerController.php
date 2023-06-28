@@ -16,7 +16,7 @@ class CustomerController extends Controller
     public function submitted()
     {
 
-        return view('formsubmit');
+        return view('dashboard');
     }
       
     public function createe()

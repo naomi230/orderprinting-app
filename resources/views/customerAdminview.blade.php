@@ -2082,8 +2082,8 @@ table{
           
         </div>
        
-
-        <div class="col-lg-6 menu-item filter-starters">
+         <div data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-6 menu-item filter-starters" >
           <img src="assets/img/menu/p.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
           <div class="menu-content">
             <a href="#">Description made by Customer</a>
@@ -2120,13 +2120,13 @@ table{
 
         
         @empty
-    <p>No orders are made by the customer</p>
+    <p style="color:#cda45a;">No orders are made by the customer</p>
 @endforelse
 
 
 <br> 
 <br> 
-        <form form method="GET" action="{{ route('adminUpdates') }}">
+        <form form method="GET" action="{{ route('adminUpdates') }}" id="myForm">
           
           <table>
           <thead>
@@ -2213,6 +2213,7 @@ table{
         </div>
       </div>
     </div>
+  </div>
   </section>
   
         
@@ -2228,7 +2229,41 @@ table{
   </main><!-- End #main -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Preventing the form from submitting normally
 
+    // Validate the required fields
+    var statusRadios = document.getElementsByName('status');
+    var detailTextarea = document.getElementById('detail');
+    
+    // Check if at least one radio button is selected
+    var isStatusSelected = Array.from(statusRadios).some(function(radio) {
+      return radio.checked;
+    });
+    
+    // Check if the detail textarea has a value
+    var isDetailValid = detailTextarea.value.trim() !== '';
+    
+    // If any validation fails, display an error message
+    if (!isStatusSelected || !isDetailValid) {
+      alert('Please provide Update on Customer Order');
+      return; // Exit the function without further processing
+    }
+
+    // Perform any additional form submission handling here
+
+    // Display a success message
+   
+     
+      // Display a success message using an alert box
+      alert('Order Update sent to Customer successfully');
+      
+      // Reset the form if needed
+      this.reset();
+    });
+  </script>
+  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -2,12 +2,7 @@
     <!-- Primary Navigation Menu -->
     <nav id="navbar" class="navbar"  style="margin-left:1000px;">
         
-                <!-- Logo -->
-                <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        
-                    </a>
-                </div>
+                
 
                 <div>
                     <ul>
@@ -45,26 +40,13 @@
                 </div>
                   </nav><!-- .navbar -->
 
-                <!-- Navigation Links                 
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
-                </div>
-            </div>-->
+              
 
             
             
 
 
-            
-
-    <!-- Responsive Navigation Menu 
-    <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
-        </div>-->
+  
 
        
               

@@ -1846,7 +1846,7 @@ section {
             </div>
           </div>
           @empty
-    {{ 'No orders are made by the customer' }}
+    <p style="color:#cda45e;">{{ 'No orders are made by the customer' }}</p>
 @endforelse  
       
       

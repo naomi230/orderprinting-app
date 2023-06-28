@@ -22,7 +22,6 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #0c0b09;
   color: #fff;
-
 }
 
 a {
@@ -180,7 +179,7 @@ h6 {
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(12, 11, 9, 0.6);
   border-bottom: 1px solid rgba(12, 11, 9, 0.6);
   transition: all 0.5s;
   z-index: 997;
@@ -248,9 +247,7 @@ h6 {
 * Desktop Navigation 
 */
 .navbar {
-  padding: 0;
-  margin-left:-80px;
-  
+  margin-right:800px;
 }
 
 .navbar ul {
@@ -941,13 +938,13 @@ section {
 
 .menu .menu-img {
   width: 70px;
-  
-  border-radius: 10%;
+  border-radius: 50%;
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
 }
 
 .menu .menu-content {
+  margin-top:-5px;
   margin-left: 85px;
   overflow: hidden;
   display: flex;
@@ -972,7 +969,7 @@ section {
   position: relative;
   z-index: 3;
   font-weight: 700;
-  color: white;
+  color: #cda45e;
   text-decoration:none;
   transition: 0.3s;
 }
@@ -1747,106 +1744,29 @@ section {
   color: #fff;
 }
 
-content
- {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.centered-div {
-  width: 900px;
-  height: 1230px;
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 10px;
-  padding: 20px;
-  margin-top: 50px; /* Adjust the distance from the top */
-}
-
-.nb{
-background:rgba(36, 36, 36, 0.95);
-
-}
-
-label{
+.view{
   color:#cda45e;
-  transition:0.5s;
-
-}
-label:hover{
-  color:white;
-}
-
-form{
-  color:inherit;
-  font-weight: 700;
-}
-form p{
-  color:#cda45a;
-  font-weight: 700;
-}
-
-button{
-  background-color: #0c0b09;
-  font-weight: 600;
-  font-size: 13px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  display: inline-block;
-  padding: 12px 30px;
-  border-radius: 50px;
-  transition: 0.3s;
-  line-height: 1;
-  color: white;
-  border: 2px solid #cda45e;
-}
-
-button:hover
- {
-  background: #cda45e;
-  color: #fff;}
-
-  textarea{
-  background: black;
-  border-radius: 10px;
-  border: 2px solid #cda45e;
-  color:#cda45e;
-  width:400px;
-  height:300px;
+  font-family: "Poppins", sans-serif;
+  font-weight:bold;
 }
 
 
-
-table{ 
-  position: relative;
+table{
         background:black;
         margin-left:40px;
         margin-top:20px;
         height:400px;
-        width:750px;
-        border-radius:50px;
-        box-sizing: border-box;
-       box-shadow: 0 2px 4px rgba(217, 7, 7, 0.1); /* Add a shadow effect */
-   
+        width:950px;
+        border: 2px solid #cda45c;
+        border-radius:10px;
+
 
         font-family: "Open Sans", sans-serif;
     }
-    
-    th{
-        padding:10px;
-        border:3px solid rgba(25,25,25,0.999);
-        color:white;
-    }
-    td{
-      padding:10px;
-      border:3px solid rgba(25,25,25,0.999);
-      
-    }
 
-    .circle-image{
-    width: 80px; 
+  .circle-image{
+  
+  width: 80px; 
   height: 80px;
   border-radius: 50%; 
   object-fit: cover; 
@@ -1860,10 +1780,22 @@ table{
   object-fit: cover; 
   }
 
-  .previous-link {
+   table{
+        background:black;
+        margin-left:0px;
+        margin-top:1px;
+        height:80px;
+        width:300px;
+        border: 2px solid black;
+        border-radius:10px;
+        
+
+        font-family: "Open Sans", sans-serif;
+    }
+    .previous-link {
   display: inline-block;
   text-decoration: none;
-  margin-right:900px;
+ margin-right:900px
 }
 
 .circle {
@@ -1896,26 +1828,6 @@ table{
   border-right-color: black;
 }
 
-.image-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
-  grid-gap: 10px;
-}
-  
-
-.image-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.image-img{
-  height:700px; 
-  width:700px;
-  border-radius: 10%;
-  
-}
 
   </style>
   <meta content="" name="description">
@@ -1952,28 +1864,29 @@ table{
 </head>
 
 <body style="background:rgba(25,25,25,0.96)">
-  <header id="header" class="d-flex align-items-center" style="background: background:rgba(25,25,25,0.96);">
-		<div class="container d-flex align-items-center justify-content-between" >
+  <header id="header" class="d-flex align-items-center" style="background: rgba(0, 0, 0, 0.95);">
+		<div class="container d-flex align-items-center justify-content-between">
 	
 		  <h1 class="logo"><a href="index.html"></a></h1>
-		  
+		  <!-- Uncomment below if you prefer to use an image logo -->
+		  <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+	
 	  <!-- ======= Header ======= -->
 	  
 		  <nav id="navbar" class="navbar">
 			<ul>
-        <a href="{{ url()->previous() }}" class="previous-link">
+        <a href="{{ asset('superAdmin') }}" class="previous-link">
           <div class="circle">
             <span class="arrow"></span>
           </div>
         </a>
         
-        
-			  <li><a class="nav-link scrscrolltoollto " href="{{ ('superAdmin') }}">Order</a></li>
+			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
+			  <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
 			  
+			  <li><a class="nav-link scrscrolltoollto" href="oncetheadminhaslogin/index.html">Jobs</a></li>
 			  
-			  <li><a class="nav-link scrollto active" href="{{ route('adminJobs') }}">Jobs</a></li>
-			  
-			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
+			  <li class="dropdown"><a href="#"><span><img src="{{asset ('assets/img/menu/icon.jpg') }}" style=" height:20px; width:20px;"></span></a>
 				<ul>
 				  <li><a href="#" style="text-decoration:none;">Notifications</a></li>
 				  <li><a href="#" style="text-decoration:none;">Settings</a></li>
@@ -1994,60 +1907,58 @@ table{
 	
 		</div>
 	  </header><!-- End Header -->
-   
-   
-    <center>
-    
-  
-<div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
-<div class="col-lg-6 menu-item filter-starters">
-  <h2 style="color:white;">Design Jobs</h2>
 
-@if (count($images) > 0)
-    <div class="image-list">
-      
-        @foreach ($images as $image)
-        <div class="image-item"> 
-             
-                <img src="{{ asset('images/' . $image->filename) }}" class="image-img" alt="Image">
+	
+
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg" style="background:rgba(25,25,25,0.96)">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title" style="background:black">
+          <h2>Orders for {{ $user->name }}</h2>
+        </div>
+        
                 
-            
-          </div>
-        @endforeach
-    
-  </div>
-@else
-    <p style="color:white;">No images uploaded yet.</p>
-@endif
+        @foreach($orders as $order)
+        <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px; background-color:black;">
+          <div class="col-lg-6 menu-item filter-starters">
+            <div class="menu-content">
+              <div class="view">  
+            <img src="{{ asset('uploads/' . $order->fileUpload)}}" class="circle-image" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
+           
+                <table >
+                  
+                  <tbody>
+                    <tr>  
+              <td>{{ 'Created at:' }}</td>
+              <td>{{ $order->created_at}}</td>
+                    </tr>
+                    <tr>
+              <td>{{ 'Order:' }}</td>
+              <td><a href="{{ route('customerAdminview', ['order_ids' => $order->id]) }}">{{ $order->field1 }}</a></td>
+                    </tr>  
+                  </tbody>
+                  
+              </table>
+            </div>
+             </div>                          
+            </div>
+          </div>  
+      @endforeach
 
-<hr>
+         
+          
+        
+         
 
+          
 
-
-@if ($errors->any())
-    <div>
-        <strong>Error:</strong>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-<div>
-<form method="POST" action="{{ route('store.adminJobs') }}" enctype="multipart/form-data">
-  @csrf
-  <div>
-      <label for="image">Choose Image:</label>
-      <input type="file" id="image" name="image">
-  </div>
-  <br>
-  <button type="submit">Upload Image</button>
-</form>
-</div>
-
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    </section><!-- End Events Section -->
+   
+  </main><!-- End #main -->
+ <!-- <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>-->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>

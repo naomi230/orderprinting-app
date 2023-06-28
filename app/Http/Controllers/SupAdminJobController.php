@@ -13,7 +13,7 @@ class AdminJobController extends Controller
         
         $images = Image::latest()->get();
 
-        return view('adminJobs', compact('images'));
+        return view('subadminJobs', compact('images'));
     }
     public function store( Request $request){
 
@@ -27,7 +27,7 @@ class AdminJobController extends Controller
 
         Image::create(['filename' => $imageName]);
 
-        return redirect()->route('adminJobs')
+        return redirect()->route('supadminJobs')
             ->with('success', 'Image uploaded successfully.');
     
 

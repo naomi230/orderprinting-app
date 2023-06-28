@@ -1968,10 +1968,10 @@ table{
         </a>
         
         
-			  <li><a class="nav-link scrscrolltoollto " href="{{ ('superAdmin') }}">Order</a></li>
+			  <li><a class="nav-link scrscrolltoollto " href="{{ ('subAdmin') }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrollto active" href="{{ route('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrollto active" href="{{ route('subadminJobs') }}">Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -2035,7 +2035,7 @@ table{
     </div>
 @endif
 <div>
-<form method="POST" action="{{ route('store.adminJobs') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route('store.subadminJobs') }}" enctype="multipart/form-data">
   @csrf
   <div>
       <label for="image">Choose Image:</label>

@@ -941,8 +941,7 @@ section {
 
 .menu .menu-img {
   width: 70px;
-  
-  border-radius: 10%;
+  border-radius: 50%;
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
 }
@@ -1876,6 +1875,7 @@ table{
   border:2px solid #cda45e;
   background-color:black;
   transition: background-color 0.3s;
+  margin-left:50px;
 }
 
 .circle:hover {
@@ -1896,26 +1896,13 @@ table{
   border-right-color: black;
 }
 
-.image-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
-  grid-gap: 10px;
-}
-  
-
-.image-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
-.image-img{
-  height:700px; 
-  width:700px;
-  border-radius: 10%;
-  
-}
+
+
+
+
+
 
   </style>
   <meta content="" name="description">
@@ -1952,7 +1939,7 @@ table{
 </head>
 
 <body style="background:rgba(25,25,25,0.96)">
-  <header id="header" class="d-flex align-items-center" style="background: background:rgba(25,25,25,0.96);">
+  <header id="header" class="d-flex align-items-center">
 		<div class="container d-flex align-items-center justify-content-between" >
 	
 		  <h1 class="logo"><a href="index.html"></a></h1>
@@ -1968,12 +1955,12 @@ table{
         </a>
         
         
-			  <li><a class="nav-link scrscrolltoollto " href="{{ ('superAdmin') }}">Order</a></li>
+			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrollto active" href="{{ route('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ route('adminJobs') }}">Jobs</a></li>
 			  
-			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
+			  <li class="dropdown"><a href="#"><span><img src="{{ asset('assets/img/menu/icon.jpg') }}" style=" height:20px; width:20px;"></span></a>
 				<ul>
 				  <li><a href="#" style="text-decoration:none;">Notifications</a></li>
 				  <li><a href="#" style="text-decoration:none;">Settings</a></li>
@@ -1994,59 +1981,48 @@ table{
 	
 		</div>
 	  </header><!-- End Header -->
-   
-   
-    <center>
-    
-  
-<div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
-<div class="col-lg-6 menu-item filter-starters">
-  <h2 style="color:white;">Design Jobs</h2>
 
-@if (count($images) > 0)
-    <div class="image-list">
-      
-        @foreach ($images as $image)
-        <div class="image-item"> 
-             
-                <img src="{{ asset('images/' . $image->filename) }}" class="image-img" alt="Image">
+	
+
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg" style="background:rgba(2.5,2.5,2.5,0.96)">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          
+               
+
+    </section><!-- End Events Section -->
+   
+    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
+        <div class="col-lg-6 menu-item filter-starters">
+
+            <div>
+               <h2> Updates</h2>
                 
-            
-          </div>
-        @endforeach
-    
-  </div>
+               @if ($updates->count() === 0)
+    <p style="color:#cda45a;">No updates available for this order.</p>
 @else
-    <p style="color:white;">No images uploaded yet.</p>
+    @foreach ($updates as $update)
+        <h2>Order ID: {{ $update->order->id }}</h2>
+        <p>Most Recent Update:</p>
+        <p style="color:#cda45a;">Status: {{ $update->status }}</p>
+        <p style="color:#cda45a;">Detail: {{ $update->detail }}</p>
+        <p style="color:#cda45a;">Created At: {{ $update->created_at }}</p>
+    @endforeach
 @endif
 
-<hr>
 
+           
+</body>
+</html>
 
-
-@if ($errors->any())
-    <div>
-        <strong>Error:</strong>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
+            </div>
+        </div>
     </div>
-@endif
-<div>
-<form method="POST" action="{{ route('store.adminJobs') }}" enctype="multipart/form-data">
-  @csrf
-  <div>
-      <label for="image">Choose Image:</label>
-      <input type="file" id="image" name="image">
-  </div>
-  <br>
-  <button type="submit">Upload Image</button>
-</form>
-</div>
-
-  <div id="preloader"></div>
+   
+  <!-- <div id="preloader"></div>-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->

@@ -941,8 +941,7 @@ section {
 
 .menu .menu-img {
   width: 70px;
-  
-  border-radius: 10%;
+  border-radius: 50%;
   float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
 }
@@ -1896,26 +1895,13 @@ table{
   border-right-color: black;
 }
 
-.image-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(1200px, 1fr));
-  grid-gap: 10px;
-}
-  
-
-.image-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 
-.image-img{
-  height:700px; 
-  width:700px;
-  border-radius: 10%;
-  
-}
+
+
+
+
+
 
   </style>
   <meta content="" name="description">
@@ -1968,10 +1954,10 @@ table{
         </a>
         
         
-			  <li><a class="nav-link scrscrolltoollto " href="{{ ('superAdmin') }}">Order</a></li>
+			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrollto active" href="{{ route('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ route('subadminJobs') }}">Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -1994,61 +1980,290 @@ table{
 	
 		</div>
 	  </header><!-- End Header -->
-   
-   
+
+	
+
+
+    <!-- ======= Menu Section ======= -->
+    <section id="menu" class="menu section-bg" style="background:rgba(2.5,2.5,2.5,0.96)">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          
+               
+
+    </section><!-- End Events Section -->
+   <main >
     <center>
-    
+    <div class="content">
+      <div class="centered-div">
+<!-- ======= Menu Section ======= -->
+
   
+    
+<!-- End Events Section -->
+
+    
+  @forelse($orders as $order)
+  <section id="menu" class="menu section-bg" style="background:black;">
+  
+  <div class="section-title" style="background:black">
+    <br>
+    <h2>ORDER CREATED AT {{ $order->created_at}}</h2>
+  </div>
 <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
 <div class="col-lg-6 menu-item filter-starters">
-  <h2 style="color:white;">Design Jobs</h2>
+          <img src="assets/img/menu/pri.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Printing Category</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field1 }}</a>
+              
+            </span>
+          </div>
+         
+        </div>
 
-@if (count($images) > 0)
-    <div class="image-list">
-      
-        @foreach ($images as $image)
-        <div class="image-item"> 
-             
-                <img src="{{ asset('images/' . $image->filename) }}" class="image-img" alt="Image">
-                
+        <div class="col-lg-6 menu-item filter-specialty">
+          <img src="assets/img/menu/bread-barrel.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Printing Type</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field2 }}</a>
+            </span>
+          </div>
+         
+        </div>
+
+        <div class="col-lg-6 menu-item filter-starters">
+          <img src="assets/img/menu/cake.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Material</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field3 }}</a>
+            </span>
+              
             
           </div>
-        @endforeach
-    
-  </div>
-@else
-    <p style="color:white;">No images uploaded yet.</p>
-@endif
+          </div>
 
-<hr>
+        <div class="col-lg-6 menu-item filter-salads">
+          <img src="assets/img/menu/caesar.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Weight(g)</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field4 }}</a> 
+            </span>
+          </div>
+          </div>
+
+        <div class="col-lg-6 menu-item filter-specialty">
+          <img src="assets/img/menu/tuscan-grilled.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Size</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field5 }}</a>
+            </span>
+          </div>
+          </div>
+
+        <div class="col-lg-6 menu-item filter-starters">
+          <img src="assets/img/menu/mozzarella.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Number of copies</a>
+            <span>
+              <a href="" style="color:#cda45e">{{ $order->field6 }}</a>
+           </select>
+           </span>
+           
+              </div>
+            </span>
+          </div>
+          
+        </div>
+       
+         <div data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-6 menu-item filter-starters" >
+          <img src="assets/img/menu/p.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
+          <div class="menu-content">
+            <a href="#">Description made by Customer</a>
+            <div style="border:solid 2px #cda45a; height:1000px width:1000px; border-radius:5%;">
+            <span  >
+              <a href="" style="color:#cda45e">{{ $order->detail }}</a>
+           </select>
+           </span>
+          </div>
+           
+              </div>
+            </span>
+          </div>
 
 
+          <div class="col-lg-6 menu-item filter-starters">
+            <img src="{{ asset('uploads/' . $order->fileUpload)}}" style="height:80px; width:80px;" class="menu-img" alt="{{ asset('assets2/img/menu/lobster-bisque.jpg') }}">
+           
+            <div class="menu-content">
+              <a href="#">Sample provided by Customer</a>
+              <div >
+              <span  >
+                <a href="{{ route('orders.dowwnload', ['orderId' => $order->id]) }}" style="color:white; background:#cda45a;border-radius:15%; padding:10px;">DOWNLOAD</a>
+             </select>
+             </span>
+            </div>
+             
+                </div>
+              </span>
+            </div>
+          
+        
 
-@if ($errors->any())
-    <div>
-        <strong>Error:</strong>
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-<div>
-<form method="POST" action="{{ route('store.adminJobs') }}" enctype="multipart/form-data">
-  @csrf
-  <div>
-      <label for="image">Choose Image:</label>
-      <input type="file" id="image" name="image">
-  </div>
+
+        
+        @empty
+    <p style="color:#cda45a;">No orders are made by the customer</p>
+@endforelse
+
+
+<br> 
+<br> 
+        <form form method="GET" action="{{ route('subadminUpdates') }}" id="myForm">
+          
+          <table>
+          <thead>
+            <tr>
+              <th>Update Order Status Below:</th>
+              <th> Add Printing Order Status Details: </th>
+            </tr>
+              </thead>
+          
+          <tbody>
+            <tr>
+              <td>
+          <label>
+            <input type="radio" name="status" value="Designing">
+            Designing
+          </label>
+          <br>
+          <label>
+            <input type="radio" name="status" value="Approval">
+            Approval
+          </label>
+          <br>
+         
+          <label>
+            <input type="radio" name="status" value="Printing">
+            Printing
+          </label>
+          <br>
+
+          
+  <label>
+    <input type="radio" name="status" value="Insertion">
+    Insertion
+  </label>
   <br>
-  <button type="submit">Upload Image</button>
+  <label>
+    <input type="radio" name="status" value="Coloration">
+    Coloration
+  </label>
+  <br>
+  <label>
+     <input type="radio" name="status" value="Lamination">
+    Lamination
+  </label>
+  <br>
+  <label>
+    <input type="radio" name="status" value="Delivery">
+    Delivery
+  </label>
+  <br>
+  </td>
+ <td>
+  
+  
+  <div><textarea name="detail" id="detail"></textarea></div>
+              </td>
+            </tr>
+          </tbody>
+          </table>
+      
+  <div class="lower">
+    <div class="menu-ingredients">
+      
+              
+    </div>
+    <div>
+      <div class="col-lg-6 menu-item filter-specialty">
+      <div class="lower">
+      <div class="btns" >
+       <button style="border-radius:50px;">CLEAR</button>
+       <button type="submit" style="border-radius:50px;">UPDATE</button>
+        </div>
+       
+        </div>
+      </div>
+      </div>
+      </div>
+  
 </form>
-</div>
+  
+        
+  
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  
+        
+        
+      
 
+    
+  
+
+</div>
+</div>
+    </center>
+  </main><!-- End #main -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Preventing the form from submitting normally
 
+    // Validate the required fields
+    var statusRadios = document.getElementsByName('status');
+    var detailTextarea = document.getElementById('detail');
+    
+    // Check if at least one radio button is selected
+    var isStatusSelected = Array.from(statusRadios).some(function(radio) {
+      return radio.checked;
+    });
+    
+    // Check if the detail textarea has a value
+    var isDetailValid = detailTextarea.value.trim() !== '';
+    
+    // If any validation fails, display an error message
+    if (!isStatusSelected || !isDetailValid) {
+      alert('Please provide Update on Customer Order');
+      return; // Exit the function without further processing
+    }
+
+    // Perform any additional form submission handling here
+
+    // Display a success message
+   
+     
+      // Display a success message using an alert box
+      alert('Order Update sent to Customer successfully');
+      
+      // Reset the form if needed
+      this.reset();
+    });
+  </script>
+  
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -163,14 +163,20 @@
                         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
                            <div class="col-lg-6 menu-item filter-specialty">
                              <div class="btns" >
-                             <a href="{{ route('customer') }}" class="btn-menu" style=" margin-right:500px; padding:20px 50px;" >NEW</a>
-                               <div class="container" data-aos="fade-up">
-                                <br>
-                                {{ Auth::user()->name }}
-                                {{ ', You have created an Order'}}<br>
-                                <br>
-                                {{ ' Please wait for Updates on your order'}}
-                               
+                              <a href="{{ route('customer') }}" class="btn-menu" style=" margin-right:500px; padding:20px 50px;" >NEW</a>
+                              @if (count($data) === 0)
+                                <div class="container" data-aos="fade-up">
+                                    <br>
+                                    {{ 'Dear,' }}{{ Auth::user()->name }}{{ ', you have no previous orders. Create new orders.' }}
+                                </div>
+                            @else
+                                <div class="container" data-aos="fade-up">
+                                    <br>
+                                    {{ Auth::user()->name }}{{ ', you have created an order.' }}<br>
+                                    <br>
+                                    {{ 'Please wait for updates on your order.' }}
+                             
+                                                           
                                 
                                 <div>
                                     <table>
@@ -234,8 +240,8 @@
                                </center>
                                  </div>
                                 </td> 
-                                                  <td> <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Updates</a></center></div></td>
-                                                  <td> <div class="viewer"><center> <a href="{{ route('order.view', ['id' => $val->id]) }}">Invoice</a></center></div>
+                                                  <td> <div class="viewer"><center> <a href="{{ route('orderUpdates', ['orderId' => $val->id])}}">Updates</a></center></div></td>
+                                                   <td> <div class="viewer"><center>  <a href="{{ route('invoices.show', ['invoiceId' => $val->id]) }}">Invoice</a></center></div>
                                                 
                                                 </div>
                                                 </td> <!-- Replace 'order.view' with the actual route name for viewing an order -->
@@ -244,6 +250,7 @@
                                             </tbody>
                                     </table>
                                 </div>
+                                @endif
                               </div>
                             </div>
                             </div>
