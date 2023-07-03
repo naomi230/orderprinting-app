@@ -1746,7 +1746,7 @@ section {
   color: #fff;
 }
 
-content
+.content
  {
   height: 100%;
   margin: 0;

@@ -56,13 +56,13 @@ Route::group(['middleware' => ['auth', 'isSuperAdmin']], function () {
 
 //routes for normal user login pages 
 Route::middleware('auth')->group(function () {
+    Route::get('/dashboard',[App\Http\Controllers\CustomerController::class,'submitted'])->name('dashboard');//after storing the displayed page route
+    Route::get('/dashboard', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
     Route::get('/customer',[App\Http\Controllers\CustomerController::class,'create'])->name('customer');
     Route::get('/viiew',[App\Http\Controllers\CustomerController::class,'createe'])->name('order.view'); //displayes the past order created
     Route::post('/form_submit',[App\Http\Controllers\FormController::class,'store'])->name('form.submit');//stores to the database
-    Route::get('/dashboard',[App\Http\Controllers\CustomerController::class,'submitted'])->name('dashboard');//after storing the displayed page route
-    Route::get('/dashboard', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
     Route::get('/customerExplore', [App\Http\Controllers\ExploreController::class, 'explore'])->name('customerExplore');
-    Route::get('/orderUpdates/{orderId}',[App\Http\Controllers\OrderUpdatesController::class,'updates'])->name('orderUpdates');
+    Route::get('/orderUpdates/{id}',[App\Http\Controllers\OrderUpdatesController::class,'edit'])->name('orderUpdates');
     Route::get('/invoices/{invoiceId}/invoice', [App\Http\Controllers\InvoiceController::class, 'showInvoice'])->name('invoices.show');
 
     //Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');

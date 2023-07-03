@@ -1895,6 +1895,23 @@ table{
 .circle:hover .arrow {
   border-right-color: black;
 }
+.content
+ {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-div {
+  width: 900px;
+  height: 1400px;
+  background: rgba(0, 0, 0, 0.95);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px; /* Adjust the distance from the top */
+}
 
 
 
@@ -1994,6 +2011,8 @@ table{
                
 
     </section><!-- End Events Section -->
+    <div class="content">
+      <div class="centered-div">
    
     <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" >
         <div class="col-lg-6 menu-item filter-starters">
@@ -2001,26 +2020,36 @@ table{
             <div>
                <h2> Updates</h2>
                 
-               @if ($updates->count() === 0)
-    <p style="color:#cda45a;">No updates available for this order.</p>
-@else
-    @foreach ($updates as $update)
-        <h2>Order ID: {{ $update->order->id }}</h2>
-        <p>Most Recent Update:</p>
-        <p style="color:#cda45a;">Status: {{ $update->status }}</p>
-        <p style="color:#cda45a;">Detail: {{ $update->detail }}</p>
-        <p style="color:#cda45a;">Created At: {{ $update->created_at }}</p>
-    @endforeach
-@endif
-
-
+               @if ($order && $order->id == $id)
+               <!-- Display the order details here -->
+               <h2>Order ID: {{ $order->id }}</h2>
+               <p>Status: {{ $order->status }}</p>
+               <p>Detail: {{ $order->detail }}</p>
+               <!-- Add more order details as needed -->
+               
+               <div data-aos="fade-up" data-aos-delay="200">
+                   <div class="col-lg-6 menu-item filter-starters">
+                       <div class="menu-content">
+                           <span class="tool-icon">&#128736;</span>
+                           <a href="#">Order Status Update:</a>
+                           <div style="border:solid 2px #cda45a; height:1000px width:1000px; border-radius:5%;">
+                               <span>
+                                   <a href="" style="color:#cda45e">{{ $order->status }}</a>
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           @endif
+       </div>
+   </div>
+    </div>
+      </div>
            
 </body>
 </html>
 
-            </div>
-        </div>
-    </div>
+           
    
   <!-- <div id="preloader"></div>-->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

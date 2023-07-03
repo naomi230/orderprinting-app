@@ -240,7 +240,7 @@
                                    </center>
                                      </div>
                                     </td> 
-                                                      <td> <div class="viewer"><center> <a href="{{ route('orderUpdates', ['orderId' => $val->id])}}">Updates</a></center></div></td>
+                                                      <td> <div class="viewer"><center> <a href="{{ route('orderUpdates', $val->id)}}">Updates</a></center></div></td>
                                                        <td> <div class="viewer"><center>  <a href="{{ route('invoices.show', ['invoiceId' => $val->id]) }}">Invoice</a></center></div>
                                                     
                                                     </div>
