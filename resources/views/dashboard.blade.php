@@ -96,7 +96,7 @@
           border-radius: 30px;
           padding: 10px;
           position: absolute;
-          top: 20%;
+          top: 35%;
           left: 60%;
           transform: translate(-50%, -50%);
           z-index: 9999;
@@ -167,7 +167,7 @@
                                   @if (count($data) === 0)
                                     <div class="container" data-aos="fade-up">
                                         <br>
-                                        {{ 'Dear,' }}{{ Auth::user()->name }}{{ ', you have no previous orders. Create new orders.' }}
+                                        {{ 'Dear  ' }}{{ Auth::user()->name }}{{ ', you have no previous orders. Create new orders.' }}
                                     </div>
                                 @else
                                     <div class="container" data-aos="fade-up">

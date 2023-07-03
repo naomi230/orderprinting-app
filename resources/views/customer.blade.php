@@ -122,7 +122,7 @@ textarea{
 	  <nav id="navbar" class="navbar" style="margin-left:-100px;">
         <ul>
 
-          <a href="{{ url()->previous() }}" class="previous-link">
+          <a href=" {{asset('dashboard')}}" class="previous-link">
             <div class="circle">
               <span class="arrow"></span>
             </div>
@@ -319,7 +319,7 @@ textarea{
               <div class="col-lg-6 menu-item filter-specialty">
               <div class="lower">
               <div class="btns" >
-                <button  >Cancel</button>
+                <a href="{{asset('dashboard')}}" style="color:white;"><button>Cancel</button></a>
                
                 <button type="submit" >Finish</button>
                 </div>

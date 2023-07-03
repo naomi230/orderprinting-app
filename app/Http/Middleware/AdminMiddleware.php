@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use \Illuminate\Auth\Middleware\Authenticate;
 
 class AdminMiddleware
 {
@@ -11,26 +12,21 @@ class AdminMiddleware
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param  \Closure  $next
+     * @param  string  $userRole
+     * @return mixed
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if(Auth::check()){
-            if(Auth::user()->role=='1'){
-            
-            return $next($request);
-
-        }else{
-            return redirect('login')->with('message','access denied as you are not admin'); 
-            
-        }
-    }else{
-       
-
-        return redirect('login')->with('message','please  login to access the website');
+    public function handle(Request $request, Closure $next,  $userRole = 'User')
+    {   
+        // Exclude the welcome route from authentication
+    if ($request->is('/')) {
+        return $next($request);
     }
-    //return $next($request);
-}
+       
+        if (auth()->check() && auth()->user()->role == $userRole) {
+            return $next($request);
+        }
 
+        return redirect('login')->with('message', 'Access denied as you are not an admin');
+    }
 }

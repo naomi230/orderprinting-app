@@ -2122,15 +2122,15 @@ label.checkbox :checked + span:after {
         <!-- ======= Header ======= -->
         <nav id="navbar" class="navbar">
             <ul>
-              <li><a class="nav-link scrollto active" href="import/index.html/#hero">Home</a></li>
+              <li><a class="nav-link scrscrolltoollto" href="{{ asset('/') }}">Home</a></li>
               <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
               
-              <li><a class="nav-link scrscrolltoollto" href="oncethecustomerhasloginExplore/index.html">Services</a></li>
-              <li><a class="nav-link scrscrolltoollto" href="import/index.html/#hero">Home</a></li>
-              <li><a class="nav-link scrscrolltoollto" href="import/index.html/#hero">Pricing</a></li>
+              <li><a class="nav-link scrscrolltoollto" href="{{ asset('/') }}">Services</a></li>
+              
+              <li><a class="nav-link scrscrolltoollto" href="{{ asset('/') }}">Pricing</a></li>
                
-              <li><a class="nav-link scrscrolltoollto" href="import/index.html/#hero">Log in</a></li> 
-              <li><a class="nav-link scrscrolltoollto" href="../index.html">Register</a></li>
+              <li><a class="nav-link scrollto {{ Request::is('login') ? 'active' : '' }}" href="{{ asset('login') }}">Log in</a></li> 
+              <li><a class="nav-link scrollto {{ Request::is('register') ? 'active' : '' }}" href="{{ asset('register') }}">Register</a></li>
                     
                  
                   

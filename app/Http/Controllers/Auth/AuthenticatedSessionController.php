@@ -29,8 +29,19 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
-    }
+        $user = Auth::user();
+
+        if ($user->utype === 'superAdm') {
+            return redirect()->intended(route('superAdmin'));
+        } else if ($user->utype === 'adm') {
+            return redirect()->intended(route('subAdmin'));
+        }else{
+            return redirect()->intended(route('dashboard'));
+            }
+            }
+
+
+
 
     /**
      * Destroy an authenticated session.

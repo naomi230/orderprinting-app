@@ -49,4 +49,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class, 'user_id');
     }
+
+   // public function role(): Attribute
+    //{
+       // return new Attribute(
+         //   get: fn ($value) =>  ["user", "admin" , "super-admin" ][$value],
+        //);
+   // }
 }

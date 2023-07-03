@@ -1757,7 +1757,7 @@ content
 
 .centered-div {
   width: 900px;
-  height: 1230px;
+  height: 1400px;
   background: rgba(0, 0, 0, 0.95);
   border-radius: 10px;
   padding: 20px;
@@ -1895,7 +1895,10 @@ table{
   border-right-color: black;
 }
 
-
+.tool-icon {
+  font-size: 35px;
+  color: #cda45e;
+}
 
 
 
@@ -2114,20 +2117,35 @@ table{
                 </div>
               </span>
             </div>
-          
-        
+            <br>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 menu-item filter-starters" >
+                <div class="menu-content">
+                <span class="tool-icon">&#128736;</span>
+                
+                  <a href="#">Order Status Update:</a>
+                  <div style="border:solid 2px #cda45a; height:1000px width:1000px; border-radius:5%;">
+                  <span  >
+                    <a href="" style="color:#cda45e">{{ $order->status }}</a>
+                 </select>
+                 </span>
+                </div>
+                 
+                    </div>
+                  </span>
+                </div>
+           
 
 
         
-        @empty
-    <p style="color:#cda45a;">No orders are made by the customer</p>
-@endforelse
-
+      
 
 <br> 
 <br> 
-        <form form method="GET" action="{{ route('adminUpdates') }}" id="myForm">
-          
+<form method="POST" action="{{ route('adminUpdates.store',  $order->id ) }}" >
+  @csrf
+  @method('POST') 
           <table>
           <thead>
             <tr>
@@ -2198,7 +2216,9 @@ table{
       <div class="btns" >
        <button style="border-radius:50px;">CLEAR</button>
        <button type="submit" style="border-radius:50px;">UPDATE</button>
-        </div>
+       
+  
+      </div>
        
         </div>
       </div>
@@ -2206,6 +2226,11 @@ table{
       </div>
   
 </form>
+
+@empty
+<p style="color:#cda45a;">{{ session('success') ?? 'No orders are made by the customer'}}</p>
+@endforelse
+
   
         
   
@@ -2229,40 +2254,7 @@ table{
   </main><!-- End #main -->
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-  <script>
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-      event.preventDefault(); // Preventing the form from submitting normally
-
-    // Validate the required fields
-    var statusRadios = document.getElementsByName('status');
-    var detailTextarea = document.getElementById('detail');
-    
-    // Check if at least one radio button is selected
-    var isStatusSelected = Array.from(statusRadios).some(function(radio) {
-      return radio.checked;
-    });
-    
-    // Check if the detail textarea has a value
-    var isDetailValid = detailTextarea.value.trim() !== '';
-    
-    // If any validation fails, display an error message
-    if (!isStatusSelected || !isDetailValid) {
-      alert('Please provide Update on Customer Order');
-      return; // Exit the function without further processing
-    }
-
-    // Perform any additional form submission handling here
-
-    // Display a success message
-   
-     
-      // Display a success message using an alert box
-      alert('Order Update sent to Customer successfully');
-      
-      // Reset the form if needed
-      this.reset();
-    });
-  </script>
+  
   
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>

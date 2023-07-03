@@ -529,6 +529,7 @@ h6 {
   line-height: 1;
   color: white;
   border: 2px solid #cda45e;
+  margin-left:1000px;
 }
 
 .btn-menu:hover,
@@ -1914,12 +1915,13 @@ table{
     <!-- ======= Menu Section ======= -->
     <section id="menu" class="menu section-bg" style="background:rgba(25,25,25,0.96)">
       <div class="container" data-aos="fade-up">
-
+<div data-aos="fade-up" data-aos-delay="200">
         <div class="section-title" style="background:black">
           <h2>Orders for {{ $user->name }}</h2>
-        </div>
+      
         
-                
+        
+        <br>  
         @foreach($orders as $order)
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px; background-color:black;">
           <div class="col-lg-6 menu-item filter-starters">
@@ -1947,7 +1949,15 @@ table{
           </div>  
       @endforeach
 
-         
+      @if(count($orders) === 0)
+      @if($user->utype === 'adm')
+        <p style="color:#cda45e;">{{ $user->name }} is a Technician.</p>
+    @else        
+    <p style="color:#cda45e;">{{ $user->name }} has not made orders yet.</p>
+    @endif
+@endif
+
+</div>        
           
         
          

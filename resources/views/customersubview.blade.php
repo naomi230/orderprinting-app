@@ -2126,8 +2126,10 @@ table{
 
 <br> 
 <br> 
-        <form form method="GET" action="{{ route('subadminUpdates') }}" id="myForm">
-          
+        
+          <form method="POST" action="{{ route('subadminUpdates', $order->id) }}" id="myForm"  >
+            @csrf
+            @method('POST') 
           <table>
           <thead>
             <tr>

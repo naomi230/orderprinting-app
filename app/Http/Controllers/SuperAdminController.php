@@ -14,7 +14,7 @@ class SuperAdminController extends Controller
         $users =User::all();
        // $customers = Customer::all();
         
-     return view('superAdmin', compact('users'));
+    return view('superAdmin', compact('users'));
         //return view('superAdmin');
     }
 

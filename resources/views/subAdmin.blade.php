@@ -1835,6 +1835,7 @@ section {
           <h2>Orders</h2>
          
           @forelse($users as $user)
+          @if($user->utype !== 'adm' && $user->utype !== 'superAdm')
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
           <div class="col-lg-6 menu-item filter-starters">
             <img src="assets2/img/menu/lobster-bisque.jpg" class="menu-img" alt="">
@@ -1845,7 +1846,8 @@ section {
              </div>                          
             </div>
           </div>
-          @empty
+          @endif
+        @empty
     <p style="color:#cda45e;">{{ 'No orders are made by the customer' }}</p>
 @endforelse  
       

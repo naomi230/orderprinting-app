@@ -1751,6 +1751,32 @@ section {
 .view:hover{
   color:white;
 }
+.link-container {
+  display: flex;
+  align-items: center;
+}
+
+.linked {
+  margin-left: 300px; 
+  
+}
+
+
+
+
+.tool-icon {
+  font-size: 35px;
+  color: #cda45e;
+  
+}
+.delete-icon{
+  font-size: 35px;
+  color: #cda45e;
+ 
+}
+
+
+
   </style>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -1832,8 +1858,8 @@ section {
       <div class="container" data-aos="fade-up">
 
         <div class="section-title" style="background:black">
-          <h2>Orders</h2>
-         
+          <h2>LIST OF USERS</h2>
+          
           @forelse($users as $user)
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200" style="border:solid #cda45e; border-radius:20px;">
           <div class="col-lg-6 menu-item filter-starters">
@@ -1841,6 +1867,16 @@ section {
             <div class="menu-content">
              <div class="view">
              <a href="{{ route('orderlist', $user) }}">{{ $user->name }}</a>
+             <div class="link-container">
+             <a href="{{ route('makeAdmin', ['id' => $user->id]) }}" class="linked" title="Make User Technician"><span class="tool-icon">&#128736;</span></a>
+            <a href="{{ route('users.destroy', $user->id) }}" onclick="event.preventDefault(); document.getElementById('delete-form').submit();" title="Delete User"> 
+              <span class="delete-icon" class="linked" >&#10006;</span>
+            </a>
+            <form id="delete-form" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
+              @csrf
+              @method('DELETE')
+          </form>
+             </div>                            
             </div>
              </div>                          
             </div>
