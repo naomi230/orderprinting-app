@@ -1957,7 +1957,7 @@ table{
 			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="{{ route('subadminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ route('subadminJobs') }}"> Previous Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -2148,7 +2148,7 @@ table{
           <br>
           <label>
             <input type="radio" name="status" value="Approval">
-            Approval
+            Acknowledgement
           </label>
           <br>
          
@@ -2174,6 +2174,11 @@ table{
     Lamination
   </label>
   <br>
+  <label>
+    <input type="radio" name="status" value="Lamination">
+   Trimming
+ </label>
+ <br>
   <label>
     <input type="radio" name="status" value="Delivery">
     Delivery

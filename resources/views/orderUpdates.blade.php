@@ -1913,14 +1913,6 @@ table{
   margin-top: 50px; /* Adjust the distance from the top */
 }
 
-
-
-
-
-
-
-
-
   </style>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -1975,7 +1967,7 @@ table{
 			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="{{ route('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ route('adminJobs') }}">Explore</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="{{ asset('assets/img/menu/icon.jpg') }}" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -2023,18 +2015,19 @@ table{
                @if ($order && $order->id == $id)
                <!-- Display the order details here -->
                <h2>Order ID: {{ $order->id }}</h2>
-               <p>Status: {{ $order->status }}</p>
-               <p>Detail: {{ $order->detail }}</p>
+               <h2>Created At:{{ $order->created_at }}</h2>
                <!-- Add more order details as needed -->
                
                <div data-aos="fade-up" data-aos-delay="200">
                    <div class="col-lg-6 menu-item filter-starters">
                        <div class="menu-content">
-                           <span class="tool-icon">&#128736;</span>
-                           <a href="#">Order Status Update:</a>
-                           <div style="border:solid 2px #cda45a; height:1000px width:1000px; border-radius:5%;">
+                          
+                          
+                           <div style="border:solid 2px #cda45a; height:100px; width:500px; border-radius:5%;">
                                <span>
-                                   <a href="" style="color:#cda45e">{{ $order->status }}</a>
+                                <a href="#" style="color:white;">Order Status Update:</a><a href="" style="color:#cda45e">{{ $order->status }}</a>
+                                   <br>
+                                   <a href="#" style="color:white;">Details:</a><a href="" style="color:white;">{{ $order->detail}}</a>
                                </span>
                            </div>
                        </div>

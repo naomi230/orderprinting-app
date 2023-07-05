@@ -1800,7 +1800,7 @@ section {
 			  <li><a class="nav-link scrollto active" href=".{{ url()->current() }}">Order</a></li>
 			  <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="{{ ('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ ('adminJobs') }}">Previous Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -1832,7 +1832,7 @@ section {
       <div class="container" data-aos="fade-up">
 
         <div class="section-title" style="background:black">
-          <h2>Orders</h2>
+          <h2>LIST OF CUSTOMERS</h2>
          
           @forelse($users as $user)
           @if($user->utype !== 'adm' && $user->utype !== 'superAdm')

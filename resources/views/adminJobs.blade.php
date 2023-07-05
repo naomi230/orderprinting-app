@@ -1971,7 +1971,7 @@ table{
 			  <li><a class="nav-link scrscrolltoollto " href="{{ ('superAdmin') }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrollto active" href="{{ route('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrollto active" href="{{ route('adminJobs') }}">Previous Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>

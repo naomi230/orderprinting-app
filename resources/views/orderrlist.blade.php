@@ -1884,7 +1884,7 @@ table{
 			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="oncetheadminhaslogin/index.html">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="oncetheadminhaslogin/index.html">Previous Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="{{asset ('assets/img/menu/icon.jpg') }}" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -1916,7 +1916,7 @@ table{
       <div class="container" data-aos="fade-up">
 
         <div class="section-title" style="background:black">
-          <h2>Orders for {{ $user->name }}</h2>
+          <h2>Orders by {{ $user->name }}</h2>
         </div>
         
                 

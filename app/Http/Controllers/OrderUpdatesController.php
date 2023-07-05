@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderUpdatesController extends Controller
 {
-    public function edit($id)
+    public function updates($id)
     {
        // Retrieve the order from the database using the provided ID
        $order = Order::find($id);

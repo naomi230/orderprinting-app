@@ -3,38 +3,30 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Order;
 
 class Invoice extends Model
 {
     protected $table = 'invoices';
 
-    protected $fillable = ['invoice_number', 'date', 'subtotal', 'vat', 'total'];
+    protected $fillable = [ 'total',];
 
      // Define the relationship with order made
    
     public function order()
     {
-        return $this->belongsTo(Order::class);
+        return $this->belongsTo(Order::class, 'order_id');
     }
 
    
-
     // Calculate and return the total amount of the invoice
     public function calculateTotalAmount()
     {
-        $total = $this->subtotal + $this->vat;
+        $total = $this->order()->sum('amount');
+        //$total = $this->order->amount;
         return $total;
     }
 
-    // Retrieve a specific invoice by ID
-    public static function getInvoiceById($invoiceId)
-    {
-        return self::findOrFail($invoiceId);
-    }
-
-    // Retrieve all invoices
-    public static function getAllInvoices()
-    {
-        return self::all();
-    }
+   
+   
 }

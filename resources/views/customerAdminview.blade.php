@@ -1960,7 +1960,7 @@ table{
 			  <li><a class="nav-link scrollto active" href="{{ url()->current() }}">Order</a></li>
 			  
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="{{ route('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ route('adminJobs') }}"> Previous Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>
@@ -2159,40 +2159,47 @@ table{
               <td>
           <label>
             <input type="radio" name="status" value="Designing">
-            Designing
+            1.Designing
           </label>
           <br>
           <label>
             <input type="radio" name="status" value="Approval">
-            Approval
+           2.Acknowledgement
           </label>
           <br>
          
           <label>
             <input type="radio" name="status" value="Printing">
-            Printing
+           3.Printing
           </label>
           <br>
 
           
   <label>
     <input type="radio" name="status" value="Insertion">
-    Insertion
+    4.Insertion
   </label>
   <br>
   <label>
     <input type="radio" name="status" value="Coloration">
-    Coloration
+    5.Coloration
   </label>
   <br>
   <label>
      <input type="radio" name="status" value="Lamination">
-    Lamination
+    6.Lamination
+  </label>
+  <br>
+  
+  <label>
+    <input type="radio" name="status" value="Delivery">
+    7.Trimming
   </label>
   <br>
   <label>
+    
     <input type="radio" name="status" value="Delivery">
-    Delivery
+   8.Delivery
   </label>
   <br>
   </td>

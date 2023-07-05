@@ -1826,7 +1826,7 @@ section {
 			  <li><a class="nav-link scrollto active" href=".{{ url()->current() }}">Order</a></li>
 			  <!--<li><a class="nav-link scrollto" href="#about">About</a></li>-->
 			  
-			  <li><a class="nav-link scrscrolltoollto" href="{{ ('adminJobs') }}">Jobs</a></li>
+			  <li><a class="nav-link scrscrolltoollto" href="{{ ('adminJobs') }}">Previous Jobs</a></li>
 			  
 			  <li class="dropdown"><a href="#"><span><img src="assets/img/menu/icon.jpg" style=" height:20px; width:20px;"></span></a>
 				<ul>

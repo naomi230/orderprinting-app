@@ -164,13 +164,7 @@
                                <div class="col-lg-6 menu-item filter-specialty">
                                  <div class="btns" >
                                   <a href="{{ route('customer') }}" class="btn-menu" style=" margin-right:500px; padding:20px 50px;" >NEW</a>
-                                  @if (count($data) === 0)
-                                    <div class="container" data-aos="fade-up">
-                                        <br>
-                                        {{ 'Dear  ' }}{{ Auth::user()->name }}{{ ', you have no previous orders. Create new orders.' }}
-                                    </div>
-                                @else
-                                    <div class="container" data-aos="fade-up">
+                                       <div class="container" data-aos="fade-up">
                                         <br>
                                         {{ Auth::user()->name }}{{ ', you have created an order.' }}<br>
                                         <br>
@@ -241,7 +235,7 @@
                                      </div>
                                     </td> 
                                                       <td> <div class="viewer"><center> <a href="{{ route('orderUpdates', $val->id)}}">Updates</a></center></div></td>
-                                                      <td> <div class="viewer"><center>  <a href="{{ route('invoice', $val->id) }}">Invoice</a></center></div>
+                                                       
                                                     
                                                     </div>
                                                     </td> <!-- Replace 'order.view' with the actual route name for viewing an order -->

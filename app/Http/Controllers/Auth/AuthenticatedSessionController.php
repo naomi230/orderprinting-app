@@ -33,9 +33,11 @@ class AuthenticatedSessionController extends Controller
 
         if ($user->utype === 'superAdm') {
             return redirect()->intended(route('superAdmin'));
+            
         } else if ($user->utype === 'adm') {
             return redirect()->intended(route('subAdmin'));
         }else{
+             
             return redirect()->intended(route('dashboard'));
             }
             }

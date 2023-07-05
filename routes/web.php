@@ -34,9 +34,9 @@ Route::get('/', function () {
 
 
 
-//Route::get('/dashboard', function () {
- //  return view('dashboard');
-//})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', function () {
+   return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -54,7 +54,7 @@ Route::group(['middleware' => ['auth', 'isSuperAdmin']], function () {
     Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
 });*/
 
-//routes for normal user login pages 
+/*//routes for normal user login pages 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard',[App\Http\Controllers\CustomerController::class,'submitted'])->name('dashboard');//after storing the displayed page route
     Route::get('/dashboard', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
@@ -66,7 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/invoices/{invoiceId}/invoice', [App\Http\Controllers\InvoiceController::class, 'showInvoice'])->name('invoices.show');
 
     //Route::get('/superAdmin',[App\Http\Controllers\SuperAdminController::class,'cruder'])->name('superAdmin');
-});
+});*/
 
 /*/ROUTES FOR TECHNICIAN
 Route::get('/subAdmin',[App\Http\Controllers\SubAdminController::class,'cruder'])->name('subAdmin');
@@ -97,9 +97,9 @@ Route::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'
 //WE ARE TALKING ABOUT THE ROUTE
                //READ THIS IMPORTANT !!!!!!!!!!!
 
-// Users Routes
+// Users Routes*/
 
-/*Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard',[App\Http\Controllers\CustomerController::class,'submitted'])->name('dashboard');//after storing the displayed page route
     Route::get('/dashboard', [App\Http\Controllers\ShowController::class, 'show'])->name('show');
     Route::get('/customer',[App\Http\Controllers\CustomerController::class,'create'])->name('customer');
@@ -107,8 +107,8 @@ Route::get('/adminUpdates',[App\Http\Controllers\AdminUpdatesController::class,'
     Route::get('/viiew',[App\Http\Controllers\CustomerController::class,'createe'])->name('order.view'); //displayes the past order created
     Route::get('/customerExplore', [App\Http\Controllers\ExploreController::class, 'explore'])->name('customerExplore');
     Route::get('/orderUpdates/{orderId}',[App\Http\Controllers\OrderUpdatesController::class,'updates'])->name('orderUpdates');
-    Route::get('/invoices/{invoiceId}/invoice', [App\Http\Controllers\InvoiceController::class, 'showInvoice'])->name('invoices.show');
-});*/
+    Route::get('/invoice/{id}', [App\Http\Controllers\InvoiceController::class, 'generateInvoice'])->name('invoice');
+});
 
 // Manager Routes
 
