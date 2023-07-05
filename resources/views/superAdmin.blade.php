@@ -1869,10 +1869,10 @@ section {
              <a href="{{ route('orderlist', $user) }}">{{ $user->name }}</a>
              <div class="link-container">
              <a href="{{ route('makeAdmin', ['id' => $user->id]) }}" class="linked" title="Make User Technician"><span class="tool-icon">&#128736;</span></a>
-            <a href="{{ route('users.destroy', $user->id) }}" onclick="event.preventDefault(); document.getElementById('delete-form').submit();" title="Delete User"> 
+            <a href="{{ route('users.destroy', $user->id) }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $user->id }}').submit();" title="Delete User"> 
               <span class="delete-icon" class="linked" >&#10006;</span>
             </a>
-            <form id="delete-form" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
+            <form id="delete-form-{{ $user->id }}" action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: none;">
               @csrf
               @method('DELETE')
           </form>

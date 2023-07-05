@@ -11,7 +11,7 @@ class UserDeleteController extends Controller
     public function destroy($id)
 {
     try {
-        dd($id);
+        
         // Find the user by ID
         $user = User::findOrFail($id);
 
