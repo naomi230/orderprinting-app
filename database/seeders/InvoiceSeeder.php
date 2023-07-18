@@ -14,11 +14,32 @@ class InvoiceSeeder extends Seeder
 
         // Seed new records
         Invoice::create([
-            'total' => 100.00,
+            'total' => 3000.00,
         ]);
 
         Invoice::create([
-            'total' => 150.00,
+            'total' => 4000.00,
+        ]);
+        Invoice::create([
+            'total' => 32500.00,
+        ]);
+
+        Invoice::create([
+            'total' => 4000.00,
+        ]);
+        Invoice::create([
+            'total' => 5000.00,
+        ]);
+
+        Invoice::create([
+            'total' => 4000.00,
+        ]);
+        Invoice::create([
+            'total' => 3000.00,
+        ]);
+
+        Invoice::create([
+            'total' => 4000.00,
         ]);
 
         // Add more records as needed

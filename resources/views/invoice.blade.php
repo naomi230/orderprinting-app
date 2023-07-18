@@ -47,18 +47,32 @@
         <p>Website: www.dasmartsolutions.co.tz</p>
         <p>Physical office: Nyamwezi & Nyati, Kariakoo.</p>
     </div>
-
-    <div class="invoice-details">
-        <h4>INVOICE TO:</h4>
-        <p>CAR CROP COMPANY</p>
-        <p>TIN: 154-784-403</p>
-        <p>DAR ES SALAAM</p>
-        <p>TANZANIA</p>
-    </div>
+    <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Item Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach($items as $field => $value)
+            <tr>
+              <td>{{ $field }}</td>
+              <td>{{ $value }}</td>
+              <td>{{ isset($prices[$field]) ? $prices[$field] : '-' }}</td>
+            </tr>
+            @endforeach
+          <tr>
+            <td>Amount:</td>
+            <td></td>
+            <td>{{ $invoice->total }}</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+      <p>Thank you for your business</p>  
+      
    
-    
-    
-    <a>Amount: {{ $invoice->total }}</a>
-    <!-- Add more invoice details as needed -->
 </body>
 </html>

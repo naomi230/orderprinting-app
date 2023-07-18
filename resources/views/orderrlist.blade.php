@@ -1947,6 +1947,11 @@ table{
           </div>  
       @endforeach
 
+      @if(count($orders) === 0)
+           
+    <p style="color:#cda45e; font-size:x-large;">{{ $user->name }} has not made orders yet.</p>
+   
+@endif
          
           
         

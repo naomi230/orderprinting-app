@@ -2163,7 +2163,7 @@ table{
           </label>
           <br>
           <label>
-            <input type="radio" name="status" value="Approval">
+            <input type="radio" name="status" value="Acknowledgement">
            2.Acknowledgement
           </label>
           <br>

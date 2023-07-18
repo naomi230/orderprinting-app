@@ -27,6 +27,8 @@ class Invoice extends Model
         return $total;
     }
 
+    
+
    
    
 }

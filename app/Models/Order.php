@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\Invoice;
 use App\Models\OrderUpdate;
+use App\Models\User;
 
 
 
@@ -34,5 +35,11 @@ class Order extends Model
     public function invoice()
     {
         return $this->hasOne(Invoice::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+        //return $this->belongsTo(User::class, 'user_id');
     }
 }

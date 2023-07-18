@@ -31,9 +31,9 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" >Order</a>
                     @else
-                    <a href="{{ route('login') }}" >Home</a>
-                    <a href="{{ route('login') }}" >Services</a>
-                    <a href="{{ route('login') }}" >Pricing</a>
+                    <a href="#" >Home</a>
+                    <a href="#" >Services</a>
+                    <a href="#" >Pricing</a>
                     <a href="{{ route('login') }}" >Log in</a>
 
                         @if (Route::has('register'))

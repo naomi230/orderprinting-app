@@ -1951,9 +1951,9 @@ table{
 
       @if(count($orders) === 0)
       @if($user->utype === 'adm')
-        <p style="color:#cda45e;">{{ $user->name }} is a Technician.</p>
+        <p style="color:#cda45e; font-family: Playfair Display serif;">{{ $user->name }} is a Technician.</p>
     @else        
-    <p style="color:#cda45e;">{{ $user->name }} has not made orders yet.</p>
+    <p style="color:#cda45e;  font-family: Playfair Display serif;">{{ $user->name }} has not made orders yet.</p>
     @endif
 @endif
 

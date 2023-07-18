@@ -170,6 +170,7 @@ textarea{
 
         <div class="section-title">
           <h2>Make Order</h2>
+
          
         <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
             <form method="POST" action="{{ route('form.submit') }}"  enctype="multipart/form-data">
@@ -190,8 +191,7 @@ textarea{
                 </select>
               </span>
             </div>
-           
-          </div>
+           </div>
 
           <div class="col-lg-6 menu-item filter-specialty">
             <img src="assets/img/menu/bread-barrel.jpg" style="height:80px; width:80px;" class="menu-img" alt="">
