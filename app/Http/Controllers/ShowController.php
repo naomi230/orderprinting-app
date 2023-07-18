@@ -25,12 +25,3 @@ class ShowController extends Controller
 
 
 
-//public function index()
-//{
-    // Retrieve the authenticated user
-   
-    // Retrieve orders made by the authenticated user
-   // $data = Order::where('user_id', $user->id)->get();
-
-    //return view('orders.index', compact('data'));
-//}

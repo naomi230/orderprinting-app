@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use App\Models\Order; // Replace ModelName with the actual name of your model
+use App\Models\Order; 
 
 
 
@@ -27,22 +27,16 @@ class FormController extends Controller
             // Add validation rules for other fields
         ]);
 
-        // Create a new instance of your model
-        //$model = new Order($validatedData);
-//you can also use the above to avoid continuous manual input
-        /*$model = new Order;
-        $model->field1 = $request->input('field1');
-        $model->field2 = $request->input('field2');
-        $model->field3 = $request->input('field3');
-        $model->field4 = $request->input('field4');
-        $model->field5 = $request->input('field5');
-        $model->field6 = $request->input('field6');
-        $model->detail = $request->input('detail');*/
 
-        $validatedData['user_id'] = Auth::id();
+
 
         // Assign values for other fields
         $order = Order::create($validatedData);
+
+        $order->user_id = auth()->id();
+
+        // Save the order
+        $order->save();
        
         // Handle file upload
         if ($request->hasFile('fileUpload')) {
@@ -53,17 +47,7 @@ class FormController extends Controller
             $order->save();
         }
 
-       // return redirect()->route('orders.index')->with('success', 'Order created successfully');
-    
-
-        // Save the model to the database
-       // $model->save();
-
-
-        // Log::debug('Model saved successfully.');
-        // Redirect to a success page or do something else
-        //return redirect()->route('formsubmit');
-        //return redirect()->back()->with('success', 'Order submitted successfully.');
+       
         return Redirect::to('/dashboard');
     }
 }
