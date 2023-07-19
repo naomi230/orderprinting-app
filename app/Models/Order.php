@@ -23,7 +23,8 @@ class Order extends Model
         'field5',
         'field6',
         'detail',
-        'fileUpload'
+        'fileUpload',
+        'user_id'
     ];
     public $incrementing='true';
     public $timestamps='false';

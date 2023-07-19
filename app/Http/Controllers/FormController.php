@@ -24,29 +24,29 @@ class FormController extends Controller
             'field6' => 'required',
             'detail'=>'required',
             'fileUpload' => 'required|image|mimes:jpeg,jpg,png,pdf|max:2048',
-            // Add validation rules for other fields
+          
         ]);
 
 
 
 
         // Assign values for other fields
-        $order = Order::create($validatedData);
-
-        $order->user_id = auth()->id();
-
-        // Save the order
-        $order->save();
+        $validatedData['user_id'] = auth()->id();
+        
+       
        
         // Handle file upload
         if ($request->hasFile('fileUpload')) {
             $file = $request->file('fileUpload');
             $fileName = $file->getClientOriginalName();
             $file->move(public_path('uploads'), $fileName);
-            $order->fileUpload = $fileName;
-            $order->save();
+            $validatedData['fileUpload'] = $fileName;
         }
 
+        Order::create($validatedData);
+
+
+        
        
         return Redirect::to('/dashboard');
     }
