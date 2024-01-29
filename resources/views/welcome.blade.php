@@ -31,7 +31,7 @@
                     @auth
                         <a href="{{ url('/dashboard') }}" >Order</a>
                     @else
-                    <a href="#" >Friends</a>
+                   
                     <a href="#" >Home</a>
                     <a href="#" >Services</a>
                     <a href="#" >Pricing</a>
