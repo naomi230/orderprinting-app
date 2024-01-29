@@ -18,14 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 
 /*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. 
-|
+THIS IS THE ROUTE FILE
 */
 
 
@@ -72,7 +65,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orderrs/{orderId}/dowwnload', [App\Http\Controllers\ListViewController::class, 'dowwnloadImage'])->name('orders.dowwnload');
     Route::get('/subadminJobs',[App\Http\Controllers\SupAdminJobController::class,'jobView'])->name('subadminJobs');
     Route::post('/subadminJobs',[App\Http\Controllers\SupAdminJobController::class,'store'])->name('store.subadminJobs');
-      //A BLADE TO ENABLE THE UPDATES TO GO STRAIGHT TO DATABASE
     Route::get('/orders/{id}/edit',[App\Http\Controllers\AdminUpdatesController::class,'edit'])->name('orders.edit');
     Route::put('/orders/{id}',  [App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('subadminUpdates');
 });
@@ -89,14 +81,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/adminJobs',[App\Http\Controllers\AdminJobController::class,'store'])->name('store.adminJobs');
     Route::get('/make-admin/{id}',[App\Http\Controllers\AdminMakerController::class,'makeAdmin'])->name('makeAdmin'); //CODES TO MAKE A CUSTOMER AN ADMIN
     Route::delete('/users/{id}', [App\Http\Controllers\UserDeleteController::class,'destroy'])->name('users.destroy');
-   //A BLADE TO ENABLE THE UPDATES TO GO STRAIGHT TO DATABASE
    Route::post('/adminUpdates/{id}',[App\Http\Controllers\AdminUpdatesController::class,'store'])->name('adminUpdates.store');
    Route::get('/customerAdminview/{id}/edit',[App\Http\Controllers\AdminUpdatesController::class,'edit'])->name('customerAdminview.edit');
-   // Route::put('/orders/{id}', [App\Http\Controllers\AdminUpdatesController::class,'updatesdb'])->name('adminUpdates');
+   
 });
-
-
-
 
 
 require __DIR__.'/auth.php';
